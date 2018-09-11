@@ -1,8 +1,7 @@
+
 public class Main {
 
-    public static void main(String[] args) {
-        ClientGui clientGUI = new ClientGui();
-        clientGUI.start();
-
-    }
+	public static void main(String[] args) {
+		Controller controller = new Controller();
+	}
 }
