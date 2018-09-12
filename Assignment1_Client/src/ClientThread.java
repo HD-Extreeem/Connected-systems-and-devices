@@ -34,27 +34,21 @@ public class ClientThread implements Runnable {
 			clientSocket = new Socket(IPadress, TCPport);
 			bufferedReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 			printStream = new PrintStream(clientSocket.getOutputStream());
-			controller.connected();
+			String msg = bufferedReader.readLine().trim();
+			System.out.println(msg);
+			controller.connected(msg);
 		} catch (Exception e) {
 			controller.error("Access refused");
 		}
-		// send("Hej");
+		
 		while (isRunning) {
-			if (clientSocket != null && printStream != null && !clientSocket.isConnected()) {
+			
+			if (clientSocket != null && printStream != null && clientSocket.isConnected()) {
 				try {
 					String msg = bufferedReader.readLine().trim();
 					System.out.println(msg);
-					printStream.println(msg);
-
-					// ObjectOutputStream output = new
-					// ObjectOutputStream(clientSocket.getOutputStream());
-					// ObjectInputStream input = new
-					// ObjectInputStream(clientSocket.getInputStream());
-					// output.flush();
-					// output.writeUTF(imageId);
-					// output.flush();
-					// img = (byte[]) input.readObject();
-					// System.out.println(img.toString());
+				
+			
 				} catch (IOException e) {
 					e.printStackTrace();
 				}

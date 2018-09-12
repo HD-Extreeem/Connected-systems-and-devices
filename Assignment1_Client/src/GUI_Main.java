@@ -1,7 +1,5 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.*;
 import javax.swing.*;
 
@@ -30,18 +28,19 @@ public class GUI_Main implements ActionListener {
 		updateButton.setText("Update");
 		updateButton.setFont(new Font("Serif", Font.BOLD, 16));
 		resolutionsBox = new JComboBox<>(resolution);
-		GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-		int width = gd.getDisplayMode().getWidth();
-		int height = gd.getDisplayMode().getHeight();
-		int centerX = (gd.getDisplayMode().getWidth()) / 2 - 250;
+		//GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+
+		//int centerX = (gd.getDisplayMode().getWidth()) / 2 - 250;
+		int centerX = 200;
 		// tas bor titel bar
 		frame.setUndecorated(true);
 		frame.setLayout(null);
+		frame.setSize(1000, 1000);
 		resolutionsBox.setBounds(centerX - 50, 690, 100, 35);
 		tabbed.setBounds(centerX - 50, 30, 650, 650);
-		fpsLabel.setBounds(centerX + 80, 695, 100, 25);
-		fpsField.setBounds(centerX + 180, 695, 30, 25);
-		updateButton.setBounds(centerX+280, 695, 100, 25);
+		fpsLabel.setBounds(centerX + 80, 695, 125, 25);
+		fpsField.setBounds(centerX + 200, 695, 30, 25);
+		updateButton.setBounds(centerX + 280, 695, 125, 25);
 		updateButton.setOpaque(true);
 		tabbed.add(image, 0);
 		tabbed.setTitleAt(0, "Camera");
@@ -50,11 +49,11 @@ public class GUI_Main implements ActionListener {
 		exitButton.setOpaque(false);
 		exitButton.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
 		exitButton.setFont(new Font("default", Font.BOLD, 25));
-		// om amn trycker på knappen programmet ska stäng ner
-		frame.setTitle("Assigment1");
+		// om man trycker pï¿½ knappen programmet ska stï¿½ng ner
+		frame.setTitle("Assignment1");
 		frame.setVisible(true);
 		frame.setResizable(false);
-		// fullskärm
+		// fullskï¿½rm
 		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		background.setBounds(0, 0, frame.getWidth(), frame.getHeight());
 		background.setOpaque(false);
@@ -68,23 +67,14 @@ public class GUI_Main implements ActionListener {
 		frame.add(background);
 		frame.setFocusable(true);
 		frame.requestFocusInWindow();
-		exitButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
-		updateButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				controller.update((String) resolutionsBox.getSelectedItem(), fpsField.getText());
-			}
-		});
+		exitButton.addActionListener(this);
+		updateButton.addActionListener(this);
 
 	}
 
 	/**
-	 * Metoden tar emot en stäng som representerar sökvägen av en bild. Den gamla
-	 * bild tas bort från fönster och den nya bilden visas.
+	 * Metoden tar emot en stï¿½ng som representerar sï¿½kvï¿½gen av en bild. Den
+	 * gamla bild tas bort frï¿½n fï¿½nster och den nya bilden visas.
 	 * 
 	 * @param path
 	 */
@@ -98,13 +88,20 @@ public class GUI_Main implements ActionListener {
 
 	}
 
+
+
 	public void dispose() {
 		frame.dispose();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		if (e.getSource() == updateButton) {
+			controller.update((String)resolutionsBox.getSelectedItem(), fpsField.getText());
+		
+		} else if (e.getSource() == exitButton) {
+			System.exit(0);
+		}
 
 	}
 

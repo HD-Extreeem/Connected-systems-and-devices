@@ -9,17 +9,17 @@ public class Controller {
 	private String IPadress;
 	private String TCPport;
 	private ClientThread clientThread;
-	private String[] resolutions = new String[] { "360*360", "560x560", "480x480", "280x280", "2800x2800" };
+	private String[] resolutions = new String[] { "360x360", "560x560", "480x480", "280x280", "2800x2800" };
 
 	public Controller() {
 		gui_log = new GUI_Log(this);
 	}
 
 	/**
-	 * Metoden anropas när man vill att programmet ansluta till servern. Metoden
-	 * kontrollerar IP, TCPport och UDPPort fält om dem är tom föröker ansluta TCP
-	 * server och UDP server. Om programmet har anslutning till TCP server stängs
-	 * ner fönstret och öppnas ett nyt fönster som använderen kan styra bilen.
+	 * Metoden anropas nï¿½r man vill att programmet ansluta till servern. Metoden
+	 * kontrollerar IP, TCPport och UDPPort fï¿½lt om dem ï¿½r tom fï¿½rï¿½ker ansluta TCP
+	 * server och UDP server. Om programmet har anslutning till TCP server stï¿½ngs
+	 * ner fï¿½nstret och ï¿½ppnas ett nyt fï¿½nster som anvï¿½nderen kan styra bilen.
 	 * 
 	 * @throws IOException
 	 * @throws NumberFormatException
@@ -28,7 +28,7 @@ public class Controller {
 		this.IPadress = gui_log.getIP();
 		this.TCPport = gui_log.getPort();
 
-		// Användaren måste mata in IP och Port nummer för att kunna ansluta
+		// Anvï¿½ndaren mï¿½ste mata in IP och Port nummer fï¿½r att kunna ansluta
 		// till server
 		if (IPadress.length() == 0 || TCPport.length() == 0) {
 			fail();
@@ -45,7 +45,7 @@ public class Controller {
 	}
 
 	/**
-	 * Visar ett fellmeddalende som informerar användraren om Ip nummer eller port
+	 * Visar ett fellmeddalende som informerar anvï¿½ndraren om Ip nummer eller port
 	 * nummer har inte angivits.
 	 */
 	public void fail() {
@@ -58,34 +58,39 @@ public class Controller {
 	}
 
 	/**
-	 * Metoden tar emot en sträng som representerar sögvägen av ny bild som ska
-	 * visas i fönstrer och skickar den sögvägen till GUI_Main klassen.
+	 * Metoden tar emot en strï¿½ng som representerar sï¿½gvï¿½gen av ny bild som ska
+	 * visas i fï¿½nstrer och skickar den sï¿½gvï¿½gen till GUI_Main klassen.
 	 * 
-	 * @param imagePath sökvägen av ny bilden.
+	 * @param imagePath sï¿½kvï¿½gen av ny bilden.
 	 */
 	public void changeImage(String imagePath) {
 		gui_main.changePath(imagePath);
 	}
 
 	/**
-	 * Metoden stänger ner anslutningen till server, stänger ner fönster (GUI_Main)
-	 * och öppnar första fönster (GUI_Log).
+	 * Metoden stï¿½nger ner anslutningen till server, stï¿½nger ner fï¿½nster (GUI_Main)
+	 * och ï¿½ppnar fï¿½rsta fï¿½nster (GUI_Log).
 	 */
 	public void close() {
+		System.out.println("closing");
 		gui_main.dispose();
 		gui_main = null;
 		gui_log = new GUI_Log(this);
 
 	}
 	
-	public void connected() {
+	public void connected(String msg) {
 		gui_log.dispose();
-		gui_main = new GUI_Main(this, resolutions);
+		System.out.println("controller gui");
+		String[] items = msg.split(",");
+		gui_main = new GUI_Main(this, items);
+	
 	}
 	
 
-	public void update(String selectedItem, String string) {
-		// TODO Auto-generated method stub
+	public void update(String selectedItem, String frameRate) {
+		String message = selectedItem+","+frameRate;
+		clientThread.send(message);
 
 	}
 

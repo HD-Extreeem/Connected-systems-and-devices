@@ -20,7 +20,7 @@ public class GUI_Log implements ActionListener {
 	private Controller controller;
 
 	/**
-		 * Konstruktor som skapar en Jframe och sätter alla komponenter in i den.
+		 * Konstruktor som skapar en Jframe och sï¿½tter alla komponenter in i den.
 		 * Konstruktor anropas med en referens till klassen Controller.
 		 * 
 		 * @param controller
@@ -34,8 +34,8 @@ public class GUI_Log implements ActionListener {
 			TCPportLabel.setText("TCP PORT");
 			TCPportLabel.setForeground(Color.white);
 		
-			ipField.setText("192.168.20.28");
-			TCPportField.setText("2562");
+			ipField.setText("192.168.20.247");
+			TCPportField.setText("8080");
 		
 			connectButton.setText("Connect");
 			ipField.setBounds(280, 50, 100, 25);
@@ -59,9 +59,9 @@ public class GUI_Log implements ActionListener {
 		}
 
 	/**
-		 * Metoden ändrar tiltle i JFrame som innehåller komponenter.
+		 * Metoden ï¿½ndrar tiltle i JFrame som innehï¿½ller komponenter.
 		 * 
-		 * @param strängen
+		 * @param strï¿½ngen
 		 *            som ska vara title.
 		 */
 		public void setText(String res) {
@@ -69,18 +69,18 @@ public class GUI_Log implements ActionListener {
 		}
 
 	/**
-		 * Returnerar en sträng som representerar IP nummer som finns i ipField.
+		 * Returnerar en strï¿½ng som representerar IP nummer som finns i ipField.
 		 * 
-		 * @return en sträng.
+		 * @return en strï¿½ng.
 		 */
 		public String getIP() {
 			return ipField.getText();
 		}
 
 	/**
-	 * Returnerar en sträng som representerar Port nummer som finns i ipField.
+	 * Returnerar en strï¿½ng som representerar Port nummer som finns i ipField.
 	 * 
-	 * @return en sträng.
+	 * @return en strï¿½ng.
 	 */
 	public String getPort() {
 		return TCPportField.getText();
@@ -88,14 +88,14 @@ public class GUI_Log implements ActionListener {
 
 
 	/**
-	 * Metoden rensar och stänger fönstret (GUI).
+	 * Metoden rensar och stï¿½nger fï¿½nstret (GUI).
 	 */
 	public void dispose() {
 		frame.dispose();
 	}
 
 	/**
-	 * Visar ett fellmeddalende som informerar användaren om anslutning till server
+	 * Visar ett fellmeddalende som informerar anvï¿½ndaren om anslutning till server
 	 * misslyckades.
 	 */
 	public void error() {
@@ -107,7 +107,7 @@ public class GUI_Log implements ActionListener {
 	}
 
 	/**
-	 * Action Listener som säger vad som ska hända när man trycker på knappen.
+	 * Action Listener som sï¿½ger vad som ska hï¿½nda nï¿½r man trycker pï¿½ knappen.
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
