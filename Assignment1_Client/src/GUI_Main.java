@@ -69,7 +69,6 @@ public class GUI_Main implements ActionListener {
 		frame.requestFocusInWindow();
 		exitButton.addActionListener(this);
 		updateButton.addActionListener(this);
-
 	}
 
 	/**
@@ -79,7 +78,8 @@ public class GUI_Main implements ActionListener {
 	 * @param path
 	 */
 	public void changePath(String path) {
-		image = null;
+
+ = null;
 		image = new Picture(path);
 		tabbed.remove(0);
 		tabbed.add(image, 0);
@@ -104,5 +104,7 @@ public class GUI_Main implements ActionListener {
 		}
 
 	}
+	
+	
 
 }
