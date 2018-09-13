@@ -21,9 +21,8 @@ void *conn_handler(void *);
  */
 void *conn_handler(void *socket_desc)
 {
-    //Get the socket descriptor
     int socket = *(int*)socket_desc;
-    int read_size;
+    int size;
     char *msg , cli_message[1500];
 
     msg = capture_get_resolutions_list(0);
@@ -31,23 +30,18 @@ void *conn_handler(void *socket_desc)
     write(socket, "\n",1);
 
     //Receive a message from client
-    while( (read_size = recv(socket , cli_message , 3000 , 0)) > 0 )
+    while( (size = recv(socket , cli_message , 1500 , 0)) > 0 )
     {
-        //Send the message back to client
+        //Sends the message back to the client
         write(socket , cli_message , strlen(cli_message));
         memset(cli_message,0,strlen(cli_message));
     }
      
-    if(read_size == 0)
-    {
-        fflush(stdout);
-    }
-    else if(read_size == -1)
-    {
-        perror("recv failed");
-    }
-         
-    //Free the socket pointer
+    if(read_size == 0) fflush(stdout);
+    
+    else if(read_size == -1) syslog(LOG_INFO, "Failed to send, ERROR!");
+    
+    
     free(socket_desc);
      
     return 0;
@@ -56,16 +50,17 @@ void *conn_handler(void *socket_desc)
 
 int main(void)
 {
-    int socket_desc , client_socket , conn , *new_socket;
-    struct sockaddr_in server , client;
+    int socket_desc;
+    int client_socket
+    int conn;
+    int *new_socket;
+    struct sockaddr_in server;
+    struct client;
    
     //Create socket
     socket_desc = socket(AF_INET , SOCK_STREAM , 0);
-    if (socket_desc == -1)
-    {
-        syslog(LOG_INFO,"FAILED TO CREATE SOCKET!");
-    }
-     
+    
+    if (socket_desc == -1) syslog(LOG_INFO,"FAILED TO CREATE SOCKET!");
     
     server.sin_family = AF_INET;
     server.sin_addr.s_addr = INADDR_ANY;
@@ -75,7 +70,7 @@ int main(void)
     if( bind(socket_desc,(struct sockaddr *)&server , sizeof(server)) < 0)
     {
         //print the error message
-        syslog(LOG_INFO,"bind error");
+        syslog(LOG_INFO,"Bind ERROR");
         return 1;
     }
      
@@ -89,7 +84,7 @@ int main(void)
     {
          
         pthread_t client_thread;
-        new_socket = malloc(1);
+        new_socket = malloc(sizeof *new_socket);
         *new_socket = client_socket;
          
         if( pthread_create( &client_thread , NULL ,  conn_handler , (void*) new_socket) < 0)
