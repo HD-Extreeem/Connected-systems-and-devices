@@ -33,7 +33,7 @@ void *msg_handler(void *socket_desc)
     //Receive a message from client
     while( (size = recv(socket , cli_message , 2000 , 0)) > 0 )
     {
-	while(1){
+	//while(1){
 	syslog(LOG_INFO, "SENDING MESSAGE!!");
         //Sends the message back to the client
           //config = cli_message;
@@ -44,6 +44,7 @@ void *msg_handler(void *socket_desc)
     	  media_stream *stream;
 
     	  stream    = capture_open_stream(IMAGE_JPEG, cli_message);
+while(1){
     	  frame     = capture_get_frame(stream);
 	  data      = capture_frame_data(frame);
           img_size  = capture_frame_size(frame);
@@ -59,7 +60,13 @@ void *msg_handler(void *socket_desc)
 	    row_data[row] = ((unsigned char*)data)[row];
 	  }
 
-    	  write(socket , row_data , sizeof(row_data));
+    	 if( write(socket , row_data , sizeof(row_data))<0){
+         syslog(LOG_INFO, "Client is disconnected");
+       memset(data,0,sizeof(data));
+	  memset(row_data,0,sizeof(row_data));
+
+         break;
+       }
 	  memset(data,0,sizeof(data));
 	  memset(row_data,0,sizeof(row_data));
     	  }
@@ -70,7 +77,7 @@ void *msg_handler(void *socket_desc)
     else if(size == -1) syslog(LOG_INFO, "Failed to send, ERROR!");
     
     free(socket_desc);
-
+    close(socket_desc);
     return 0;
 }
 

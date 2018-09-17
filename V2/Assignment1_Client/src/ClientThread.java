@@ -32,18 +32,16 @@ public class ClientThread implements Runnable {
 	@Override
 	public void run() {
 		/*
-		 * When everything is initialized, then we can send message to server Is
-		 * sent through socket that was opened!
+		 * When everything is initialized, then we can send message to server Is sent
+		 * through socket that was opened!
 		 */
 		try {
 			clientSocket = new Socket(IPadress, TCPport);
-			bufferedReader = new BufferedReader(new InputStreamReader(
-					clientSocket.getInputStream()));
+			bufferedReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 			printStream = new PrintStream(clientSocket.getOutputStream());
-			 img2 =  ImageIO.createImageInputStream(clientSocket.getInputStream());
+			img2 = ImageIO.createImageInputStream(clientSocket.getInputStream());
 			String msg = bufferedReader.readLine().trim();
 			System.out.println(msg);
-
 			controller.connected(msg);
 
 			// bufferedReader.close();
@@ -53,80 +51,15 @@ public class ClientThread implements Runnable {
 
 		while (isRunning) {
 
-			if (clientSocket != null && printStream != null
-					&& clientSocket.isConnected()) {
+			if (clientSocket != null && printStream != null && clientSocket.isConnected()) {
 				try {
-					// String msg = bufferedReader.readLine().trim();
-					// System.out.println(msg);
-					// int size = Integer.parseInt(msg);
-					// byte[] marr = new byte[size];
-
-					// DataInputStream inputStream = new
-					// DataInputStream(clientSocket.getInputStream());
-					// InputStream inputStream = clientSocket.getInputStream();
-
-					// byte[] sizeAr = new byte[4];
-					// inputStream.read(sizeAr);
-					// int size = ByteBuffer.wrap(sizeAr).asIntBuffer().get();
-					// while ((byteRead = inputStream.read(marr)) != -1) ;
-					// for (int i = 0; i < size; i++) {
-					// marr[i] = inputStream.readByte();
-					// }
-
-					// inputStream.read(marr);
-					// System.out.println(marr.toString());
-					// BufferedImage image = ImageIO.read(new
-					// ByteArrayInputStream(marr));
-					
-				//	BufferedImage image = ImageIO.read(ImageIO
-				//			.createImageInputStream(clientSocket
-				//					.getInputStream()));
-					
-				img = ImageIO.read(img2);	
-					// System.out.println("Received " + image.getHeight() + "x"
-					// + image.getWidth() + ": " + System.currentTimeMillis());
+					img = ImageIO.read(img2);
 					if (img != null) {
-					//	ImageIO.write(image, "jpeg", new File("src/files/"
-					//			+ imageNumber + ".jpg"));
-					//	controller.changeImage("src/files/" + imageNumber
-					//			+ ".jpg");
-					//	imageNumber++;
 						controller.changeImage(img);
 						img2.flush();
-						img=null;
-					//	controller.rutin();
+						img = null;
 						System.out.println("SUCCESS!");
 					}
-					// InputStream is = clientSocket.getInputStream();
-					// FileOutputStream fos = new FileOutputStream("src/files/"
-					// + imageNumber + ".jpg");
-					// BufferedOutputStream bos = new BufferedOutputStream(fos);
-					// bos.write(marr);
-					// bos.close();
-					// fos.close();
-					// int bytesRead = is.read(marr,0,marr.length);
-
-					// bos.flush();
-					// bos.close();
-
-					/*
-					 * ByteArrayOutputStream boas = new
-					 * ByteArrayOutputStream(size); int bytesRead = 0; int
-					 * bytesIn = 0; try{ while(bytesRead < size){ bytesIn =
-					 * is.read(marr); bytesRead += bytesIn;
-					 * boas.write(marr,0,bytesIn); } boas.close();
-					 * ByteArrayInputStream bais = new
-					 * ByteArrayInputStream(boas.toByteArray()); img =
-					 * ImageIO.read(bais); System.out.println("Img done!");
-					 * bais.close(); } catch (IOException e){
-					 * System.out.println(e.getLocalizedMessage()); }
-					 */
-
-					// img =
-					// ImageIO.read(ImageIO.createImageInputStream(clientSocket.getInputStream()));
-					// ImageIO.write(img, "jpg", new File("src/files/" +
-					// imageNumber + ".jpg"));
-
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
