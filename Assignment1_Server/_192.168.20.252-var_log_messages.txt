@@ -1,0 +1,335 @@
+
+----- System log -----
+
+2018-09-05T11:45:15.527+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Removing "Overlay Text" action
+2018-09-05T11:45:15.531+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Removing "Yurdaer" action rule
+2018-09-05T11:45:15.651+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Validating "Overlay Text" action
+2018-09-05T11:45:15.654+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Removing "Overlay Text" action
+2018-09-05T11:45:15.745+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Creating "Yurdaer" action rule
+2018-09-05T11:45:21.989+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.242
+2018-09-05T11:45:26.508+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Action rule "Yurdaer" is starting action "Overlay Text"
+2018-09-05T11:45:28.961+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Action rule "Yurdaer" is stopping action "Overlay Text"
+2018-09-05T11:45:31.597+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Action rule "Yurdaer" is starting action "Overlay Text"
+2018-09-05T11:45:37.224+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.242
+2018-09-05T11:45:38.323+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Action rule "Yurdaer" is stopping action "Overlay Text"
+2018-09-05T11:46:12.232+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Action rule "Yurdaer" is starting action "Overlay Text"
+2018-09-05T11:46:12.450+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.242
+2018-09-05T11:46:48.026+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.242
+2018-09-05T11:46:49.089+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Action rule "Yurdaer" is stopping action "Overlay Text"
+2018-09-05T11:47:26.207+00:00 axis-00408cf5b0f1 [ INFO    ] parhand[1461]: Updated configuration file /etc/sysconfig/image_text.conf.
+2018-09-05T11:47:26.377+00:00 axis-00408cf5b0f1 [ INFO    ] parhand[1461]: killall: utask: no process killed
+2018-09-05T11:49:05.639+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Removing "Overlay Text" action
+2018-09-05T11:49:05.647+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Removing "Yurdaer" action rule
+2018-09-05T11:49:05.757+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Validating "PTZ Control" action
+2018-09-05T11:49:05.779+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Removing "PTZ Control" action
+2018-09-05T11:49:05.874+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Creating "Yurdaer" action rule
+2018-09-05T11:49:11.330+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Action rule "Yurdaer" is starting action "PTZ Control"
+2018-09-05T11:49:11.566+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.242
+2018-09-05T11:49:31.177+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.242
+2018-09-05T11:49:44.659+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Removing "PTZ Control" action
+2018-09-05T11:49:44.659+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Removing "Yurdaer" action rule
+2018-09-05T11:49:44.779+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Validating "PTZ Control" action
+2018-09-05T11:49:44.797+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Removing "PTZ Control" action
+2018-09-05T11:49:44.859+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Creating "Yurdaer" action rule
+2018-09-05T11:49:49.910+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.242
+2018-09-05T11:49:51.469+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Action rule "Yurdaer" is starting action "PTZ Control"
+2018-09-05T11:50:32.696+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.242
+2018-09-05T11:51:08.150+00:00 axis-00408cf5b0f1 [ INFO    ] parhand[1461]: Updated configuration file /etc/sysconfig/image_text.conf.
+2018-09-05T11:51:08.257+00:00 axis-00408cf5b0f1 [ INFO    ] parhand[1461]: killall: utask: no process killed
+2018-09-05T11:51:08.301+00:00 axis-00408cf5b0f1 [ INFO    ] parhand[1461]: Updated configuration file /etc/sysconfig/image_text.conf.
+2018-09-05T11:51:08.417+00:00 axis-00408cf5b0f1 [ INFO    ] parhand[1461]: killall: utask: no process killed
+2018-09-05T11:51:32.973+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Removing "PTZ Control" action
+2018-09-05T11:51:32.978+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Removing "Yurdaer" action rule
+2018-09-05T11:51:33.066+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Validating "Overlay Text" action
+2018-09-05T11:51:33.069+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Removing "Overlay Text" action
+2018-09-05T11:51:33.138+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Creating "Yurdaer" action rule
+2018-09-05T11:51:33.249+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Action rule "Yurdaer" is starting action "Overlay Text"
+2018-09-05T11:51:38.647+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.242
+2018-09-05T11:51:42.959+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Action rule "Yurdaer" is stopping action "Overlay Text"
+2018-09-05T11:51:45.444+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Action rule "Yurdaer" is starting action "Overlay Text"
+2018-09-05T11:51:51.039+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Action rule "Yurdaer" is stopping action "Overlay Text"
+2018-09-05T11:51:52.310+00:00 axis-00408cf5b0f1 [ NOTICE  ] actionengined: Action rule "Yurdaer" is starting action "Overlay Text"
+2018-09-05T11:51:55.416+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.242
+2018-09-05T11:54:23.004+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.242
+2018-09-05T11:54:26.741+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.242
+2018-09-05T11:54:39.293+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.242
+2018-09-05T11:54:41.121+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.242
+2018-09-05T11:54:42.775+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.242
+2018-09-05T11:54:43.233+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.242
+2018-09-05T11:54:44.771+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.242
+2018-09-05T11:54:46.353+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.242
+2018-09-05T11:54:47.873+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.242
+2018-09-05T11:54:57.230+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.242
+2018-09-06T08:56:07.009+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.231
+2018-09-06T08:57:47.604+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.231
+2018-09-06T08:57:50.747+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.231
+2018-09-06T08:58:43.966+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.231
+2018-09-06T11:16:01.747+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Uploaded '/tmp/Hello_1_0_mipsisa32r2el.eap' size:80015
+2018-09-06T11:16:03.299+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-06T11:16:03.390+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Package /tmp/Hello_1_0_mipsisa32r2el.eap installation OK
+2018-09-06T11:16:13.563+00:00 axis-00408cf5b0f1 [ INFO    ] hello_world[0]: starting hello_world
+2018-09-07T15:49:08.297+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.235
+2018-09-07T15:52:22.124+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.235
+2018-09-07T15:52:46.452+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.235
+2018-09-07T15:53:07.369+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.235
+2018-09-10T14:10:22.015+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.225
+2018-09-10T14:10:37.613+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.225
+2018-09-11T12:37:42.266+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.231
+2018-09-11T12:52:35.625+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.231
+2018-09-13T16:23:01.580+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.228
+2018-09-13T16:25:31.843+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.228
+2018-09-13T20:33:21.609+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-13T21:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-13T22:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-13T23:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T00:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T01:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T02:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T03:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T04:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T05:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T06:33:21.604+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T07:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T08:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T09:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T10:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T11:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T12:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T13:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T14:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T15:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T16:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T17:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T18:33:21.612+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T19:33:21.604+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T20:33:21.604+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T21:33:21.609+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T22:33:21.613+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-14T23:33:21.607+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T00:33:21.607+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T01:33:21.607+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T02:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T03:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T04:33:21.610+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T05:33:21.610+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T06:33:21.612+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T07:33:21.612+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T08:33:21.609+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T09:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T10:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T11:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T12:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T13:33:21.604+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T14:33:21.604+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T15:33:21.613+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T16:33:21.610+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T17:33:21.610+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T18:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T19:33:21.604+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T20:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T21:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T22:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-15T23:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T00:33:21.609+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T01:33:21.609+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T02:33:21.608+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T03:33:21.610+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T04:33:21.610+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T05:33:21.610+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T06:33:21.609+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T07:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T08:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T09:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T10:33:21.604+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T11:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T12:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T13:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T14:33:21.604+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T15:33:21.609+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T16:33:21.614+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T17:33:21.609+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T18:33:21.613+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T19:33:21.609+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T20:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T21:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T22:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-16T23:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T00:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T01:33:21.604+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T02:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T03:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T04:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T05:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T06:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T07:33:21.604+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T08:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T09:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T10:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T11:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T12:11:21.515+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.227
+2018-09-17T12:21:34.617+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.229
+2018-09-17T12:23:56.321+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Uploaded '/tmp/hello_glib_1_0_mipsisa32r2el.eap' size:79430
+2018-09-17T12:24:00.745+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-17T12:24:01.162+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Web server restart will be required.
+2018-09-17T12:24:01.205+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Package /tmp/hello_glib_1_0_mipsisa32r2el.eap installation OK
+2018-09-17T12:24:01.272+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Restarting the web server.
+2018-09-17T12:24:01.366+00:00 axis-00408cf5b0f1 [ INFO    ] systemd[1]: Stopping httpd (Apache)...
+2018-09-17T12:24:07.482+00:00 axis-00408cf5b0f1 [ INFO    ] systemd[1]: Starting httpd (Apache)...
+2018-09-17T12:24:09.601+00:00 axis-00408cf5b0f1 [ INFO    ] systemd[1]: Started httpd (Apache).
+2018-09-17T12:24:13.345+00:00 axis-00408cf5b0f1 [ INFO    ] hello_glib[0]: starting hello_glib
+2018-09-17T12:24:13.599+00:00 axis-00408cf5b0f1 [ INFO    ] hello_glib: testingsyslog again
+2018-09-17T12:24:35.187+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.227
+2018-09-17T12:28:13.983+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.229
+2018-09-17T12:31:04.404+00:00 axis-00408cf5b0f1 [ INFO    ] hello_glib[0]: stopping hello_glib
+2018-09-17T12:31:13.757+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-17T12:31:13.845+00:00 axis-00408cf5b0f1 [ INFO    ] control.cgi: Web server restart will be required.
+2018-09-17T12:31:14.130+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-17T12:31:14.181+00:00 axis-00408cf5b0f1 [ INFO    ] control.cgi: Restarting the web server.
+2018-09-17T12:31:14.250+00:00 axis-00408cf5b0f1 [ INFO    ] systemd[1]: Stopping httpd (Apache)...
+2018-09-17T12:31:19.210+00:00 axis-00408cf5b0f1 [ INFO    ] systemd[1]: Starting httpd (Apache)...
+2018-09-17T12:31:20.231+00:00 axis-00408cf5b0f1 [ INFO    ] systemd[1]: Started httpd (Apache).
+2018-09-17T12:31:24.893+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.227
+2018-09-17T12:31:26.629+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.227
+2018-09-17T12:32:02.759+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Uploaded '/tmp/hello_glib_1_0_mipsisa32r2el.eap' size:79438
+2018-09-17T12:32:04.751+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-17T12:32:04.830+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Web server restart will be required.
+2018-09-17T12:32:04.849+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Package /tmp/hello_glib_1_0_mipsisa32r2el.eap installation OK
+2018-09-17T12:32:04.884+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Restarting the web server.
+2018-09-17T12:32:04.929+00:00 axis-00408cf5b0f1 [ INFO    ] systemd[1]: Stopping httpd (Apache)...
+2018-09-17T12:32:10.111+00:00 axis-00408cf5b0f1 [ INFO    ] systemd[1]: Starting httpd (Apache)...
+2018-09-17T12:32:11.170+00:00 axis-00408cf5b0f1 [ INFO    ] systemd[1]: Started httpd (Apache).
+2018-09-17T12:32:32.951+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Uploaded '/tmp/hello_glib_1_0_mipsisa32r2el.eap' size:79438
+2018-09-17T12:32:33.972+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-17T12:32:34.058+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Web server restart will be required.
+2018-09-17T12:32:34.358+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-17T12:32:36.059+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-17T12:32:36.087+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Web server restart will be required.
+2018-09-17T12:32:36.119+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Package /tmp/hello_glib_1_0_mipsisa32r2el.eap installation OK
+2018-09-17T12:32:36.175+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Restarting the web server.
+2018-09-17T12:32:36.251+00:00 axis-00408cf5b0f1 [ INFO    ] systemd[1]: Stopping httpd (Apache)...
+2018-09-17T12:32:41.423+00:00 axis-00408cf5b0f1 [ INFO    ] systemd[1]: Starting httpd (Apache)...
+2018-09-17T12:32:42.450+00:00 axis-00408cf5b0f1 [ INFO    ] systemd[1]: Started httpd (Apache).
+2018-09-17T12:33:04.084+00:00 axis-00408cf5b0f1 [ INFO    ] hello_glib[0]: starting hello_glib
+2018-09-17T12:33:04.279+00:00 axis-00408cf5b0f1 [ INFO    ] hello_glib: testingsyslog again
+2018-09-17T12:33:21.612+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T12:34:17.507+00:00 axis-00408cf5b0f1 [ INFO    ] hello_glib[0]: stopping hello_glib
+2018-09-17T12:59:17.765+00:00 axis-00408cf5b0f1 [ INFO    ] control.cgi: Application 'hello_glib' is not running
+2018-09-17T12:59:24.156+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-17T12:59:24.241+00:00 axis-00408cf5b0f1 [ INFO    ] control.cgi: Web server restart will be required.
+2018-09-17T12:59:24.519+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-17T12:59:24.609+00:00 axis-00408cf5b0f1 [ INFO    ] control.cgi: Restarting the web server.
+2018-09-17T12:59:24.654+00:00 axis-00408cf5b0f1 [ INFO    ] systemd[1]: Stopping httpd (Apache)...
+2018-09-17T12:59:29.551+00:00 axis-00408cf5b0f1 [ INFO    ] systemd[1]: Starting httpd (Apache)...
+2018-09-17T12:59:30.630+00:00 axis-00408cf5b0f1 [ INFO    ] systemd[1]: Started httpd (Apache).
+2018-09-17T13:33:21.610+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T14:33:21.610+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T15:33:21.603+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T15:48:41.344+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session created from 192.168.20.227
+2018-09-17T15:48:56.694+00:00 axis-00408cf5b0f1 [ INFO    ] monolith[1548]: monolith[1548]: HTTP image/jpeg session terminated from 192.168.20.227
+2018-09-17T16:33:21.607+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T17:33:21.604+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T18:33:21.611+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T19:33:21.603+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T20:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T21:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T22:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-17T23:33:21.609+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-18T00:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-18T01:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-18T02:33:21.604+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-18T03:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-18T04:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-18T05:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-18T06:33:21.604+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-18T07:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-18T08:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-18T09:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-18T10:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-18T11:33:21.606+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-18T12:33:21.609+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-18T13:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-18T14:33:21.605+00:00 axis-00408cf5b0f1 [ WARNING ] disks[1978]: Failed to get /sys/ path for /dev/mmcblk0p1
+2018-09-18T14:50:27.067+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Uploaded '/tmp/test_1_0_mipsisa32r2el.eap' size:36250
+2018-09-18T14:50:28.553+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-18T14:50:28.637+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Package /tmp/test_1_0_mipsisa32r2el.eap installation OK
+2018-09-18T14:50:30.124+00:00 axis-00408cf5b0f1 [ INFO    ] test[0]: starting test
+2018-09-18T14:50:40.428+00:00 axis-00408cf5b0f1 [ WARNING ] test: Could not get VideoType from com.axis.VideoControl: Method "Get" with signature "ss" on interface "org.freedesktop.DBus.Properties" doesn't exist
+2018-09-18T14:50:40.433+00:00 axis-00408cf5b0f1 [ INFO    ] test: Handler!
+2018-09-18T14:50:45.459+00:00 axis-00408cf5b0f1 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-18T14:50:59.554+00:00 axis-00408cf5b0f1 [ INFO    ] test: Client is disconnected
+2018-09-18T14:50:59.554+00:00 axis-00408cf5b0f1 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-18T14:50:59.692+00:00 axis-00408cf5b0f1 [ INFO    ] test: Client is disconnected
+2018-09-18T14:51:13.761+00:00 axis-00408cf5b0f1 [ INFO    ] test: Handler!
+2018-09-18T14:51:17.665+00:00 axis-00408cf5b0f1 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-18T14:51:32.411+00:00 axis-00408cf5b0f1 [ INFO    ] test: Client is disconnected
+2018-09-18T14:51:32.420+00:00 axis-00408cf5b0f1 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-18T14:51:32.489+00:00 axis-00408cf5b0f1 [ INFO    ] test: Client is disconnected
+2018-09-18T14:51:42.543+00:00 axis-00408cf5b0f1 [ INFO    ] test: Handler!
+2018-09-18T14:51:42.544+00:00 axis-00408cf5b0f1 [ WARNING ] test: message repeated 2 times: [ Could not get VideoType from com.axis.VideoControl: Method "Get" with signature "ss" on interface "org.freedesktop.DBus.Properties" doesn't exist]
+2018-09-18T14:51:47.249+00:00 axis-00408cf5b0f1 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-18T14:51:47.322+00:00 axis-00408cf5b0f1 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-18T14:52:14.342+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Uploaded '/tmp/test_1_0_mipsisa32r2el.eap' size:36246
+2018-09-18T14:52:15.367+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-18T14:52:16.971+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Package /tmp/test_1_0_mipsisa32r2el.eap installation OK
+2018-09-18T14:52:16.972+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: message repeated 2 times: [ [system] Reloaded configuration]
+2018-09-18T14:52:18.511+00:00 axis-00408cf5b0f1 [ INFO    ] test[0]: starting test
+2018-09-18T14:57:40.914+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Uploaded '/tmp/test_1_0_mipsisa32r2el.eap' size:36256
+2018-09-18T14:57:41.240+00:00 axis-00408cf5b0f1 [ INFO    ] test[0]: stopping test
+2018-09-18T14:57:42.196+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-18T14:57:42.569+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-18T14:57:43.737+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Package /tmp/test_1_0_mipsisa32r2el.eap installation OK
+2018-09-18T14:57:43.738+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-18T14:57:45.242+00:00 axis-00408cf5b0f1 [ INFO    ] test[0]: starting test
+2018-09-18T14:57:54.153+00:00 axis-00408cf5b0f1 [ WARNING ] test: Could not get VideoType from com.axis.VideoControl: Method "Get" with signature "ss" on interface "org.freedesktop.DBus.Properties" doesn't exist
+2018-09-18T14:57:54.157+00:00 axis-00408cf5b0f1 [ INFO    ] test: Handler!
+2018-09-18T14:57:55.949+00:00 axis-00408cf5b0f1 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-18T14:57:57.049+00:00 axis-00408cf5b0f1 [ INFO    ] test: Client is disconnected
+2018-09-18T14:57:57.049+00:00 axis-00408cf5b0f1 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-18T14:57:57.206+00:00 axis-00408cf5b0f1 [ INFO    ] test: Client is disconnected
+2018-09-18T14:58:05.444+00:00 axis-00408cf5b0f1 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-18T14:58:07.079+00:00 axis-00408cf5b0f1 [ INFO    ] test: Client is disconnected
+2018-09-18T14:58:07.079+00:00 axis-00408cf5b0f1 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-18T14:58:07.125+00:00 axis-00408cf5b0f1 [ INFO    ] test: Client is disconnected
+2018-09-18T14:58:08.349+00:00 axis-00408cf5b0f1 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-18T14:58:08.421+00:00 axis-00408cf5b0f1 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-18T14:58:23.119+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Uploaded '/tmp/test_1_0_mipsisa32r2el.eap' size:36247
+2018-09-18T14:58:24.149+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-18T14:58:24.569+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-18T14:58:25.702+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Package /tmp/test_1_0_mipsisa32r2el.eap installation OK
+2018-09-18T14:58:25.710+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-18T14:58:27.216+00:00 axis-00408cf5b0f1 [ INFO    ] test[0]: starting test
+2018-09-18T14:58:31.451+00:00 axis-00408cf5b0f1 [ WARNING ] test: Could not get VideoType from com.axis.VideoControl: Method "Get" with signature "ss" on interface "org.freedesktop.DBus.Properties" doesn't exist
+2018-09-18T14:58:31.454+00:00 axis-00408cf5b0f1 [ INFO    ] test: Handler!
+2018-09-18T14:58:33.901+00:00 axis-00408cf5b0f1 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-18T14:58:59.993+00:00 axis-00408cf5b0f1 [ INFO    ] test: Client is disconnected
+2018-09-18T14:58:59.994+00:00 axis-00408cf5b0f1 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-18T14:59:00.131+00:00 axis-00408cf5b0f1 [ INFO    ] test: Client is disconnected
+2018-09-18T14:59:02.143+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Uploaded '/tmp/test_1_0_mipsisa32r2el.eap' size:36243
+2018-09-18T14:59:02.521+00:00 axis-00408cf5b0f1 [ INFO    ] test[0]: stopping test
+2018-09-18T14:59:03.563+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-18T14:59:05.148+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Package /tmp/test_1_0_mipsisa32r2el.eap installation OK
+2018-09-18T14:59:05.162+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: message repeated 2 times: [ [system] Reloaded configuration]
+2018-09-18T14:59:06.663+00:00 axis-00408cf5b0f1 [ INFO    ] test[0]: starting test
+2018-09-18T14:59:22.330+00:00 axis-00408cf5b0f1 [ WARNING ] test: Could not get VideoType from com.axis.VideoControl: Method "Get" with signature "ss" on interface "org.freedesktop.DBus.Properties" doesn't exist
+2018-09-18T14:59:22.336+00:00 axis-00408cf5b0f1 [ INFO    ] test: Handler!
+2018-09-18T14:59:23.102+00:00 axis-00408cf5b0f1 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-18T15:01:20.209+00:00 axis-00408cf5b0f1 [ INFO    ] test: Client is disconnected
+2018-09-18T15:01:20.209+00:00 axis-00408cf5b0f1 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-18T15:01:20.369+00:00 axis-00408cf5b0f1 [ INFO    ] test: Client is disconnected
+2018-09-18T15:01:22.803+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Uploaded '/tmp/test_1_0_mipsisa32r2el.eap' size:36262
+2018-09-18T15:01:23.191+00:00 axis-00408cf5b0f1 [ INFO    ] test[0]: stopping test
+2018-09-18T15:01:24.255+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-18T15:01:25.871+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Package /tmp/test_1_0_mipsisa32r2el.eap installation OK
+2018-09-18T15:01:25.872+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: message repeated 2 times: [ [system] Reloaded configuration]
+2018-09-18T15:01:27.338+00:00 axis-00408cf5b0f1 [ INFO    ] test[0]: starting test
+2018-09-18T15:01:35.225+00:00 axis-00408cf5b0f1 [ WARNING ] test: Could not get VideoType from com.axis.VideoControl: Method "Get" with signature "ss" on interface "org.freedesktop.DBus.Properties" doesn't exist
+2018-09-18T15:01:35.232+00:00 axis-00408cf5b0f1 [ INFO    ] test: Handler!
+2018-09-18T15:01:38.327+00:00 axis-00408cf5b0f1 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-18T15:01:47.389+00:00 axis-00408cf5b0f1 [ INFO    ] test: Client is disconnected
+2018-09-18T15:01:47.391+00:00 axis-00408cf5b0f1 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-18T15:01:47.533+00:00 axis-00408cf5b0f1 [ INFO    ] test: Client is disconnected
+2018-09-18T15:02:08.763+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Uploaded '/tmp/test_1_0_mipsisa32r2el.eap' size:36258
+2018-09-18T15:02:09.148+00:00 axis-00408cf5b0f1 [ INFO    ] test[0]: stopping test
+2018-09-18T15:02:10.225+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: [system] Reloaded configuration
+2018-09-18T15:02:11.778+00:00 axis-00408cf5b0f1 [ INFO    ] upload.cgi: Package /tmp/test_1_0_mipsisa32r2el.eap installation OK
+2018-09-18T15:02:11.790+00:00 axis-00408cf5b0f1 [ NOTICE  ] dbus[1349]: message repeated 2 times: [ [system] Reloaded configuration]
