@@ -1,17 +1,20 @@
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.nio.CharBuffer;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
 /**
- *
+ * 
  * @author Yurdaer Dalkic & Hadi Deknache
- *
+ * 
  *         This class handles all logical operations etc. connection with
  *         server, closing GUI_Log and opening GUI_Main, changing received
  *         images on the display, closing the connection with the server...
- *
+ * 
  */
 public class Controller {
 
@@ -21,7 +24,10 @@ public class Controller {
 	private String TCPport;
 	private ClientThread clientThread;
 	private String res;
-	private String[] resolutions = new String[] { "360x360", "560x560", "480x480", "280x280", "2800x2800" };
+	private RSA rsa;
+	private String XoR;
+	private String[] resolutions = new String[] { "360x360", "560x560",
+			"480x480", "280x280", "2800x2800" };
 
 	/**
 	 * Constructor which starts the GUI_Log in order to allow user type in IP
@@ -32,10 +38,10 @@ public class Controller {
 	}
 
 	/**
-	 * This method calls when user click the button on GUI_Log. This method checks
-	 * the IP address and port number and starts a new thread which handles the
-	 * communication with the server (ClientThread).
-	 *
+	 * This method calls when user click the button on GUI_Log. This method
+	 * checks the IP address and port number and starts a new thread which
+	 * handles the communication with the server (ClientThread).
+	 * 
 	 * @throws IOException
 	 * @throws NumberFormatException
 	 */
@@ -49,11 +55,13 @@ public class Controller {
 		}
 		//
 		else {
-			// Start a new threat which will handles the communication with the server
+			// Start a new threat which will handles the communication with the
+			// server
 			clientThread = new ClientThread(this, IPadress, TCPport);
 			clientThread.setIsRunning(true);
 			Thread cliThread = new Thread(clientThread);
 			cliThread.start();
+			rsa = new RSA();
 			gui_log.disableButton(false);
 		}
 	}
@@ -68,7 +76,7 @@ public class Controller {
 
 	/**
 	 * This method displays a message dialog with received string.
-	 *
+	 * 
 	 * @param message
 	 */
 	public void error(String message) {
@@ -78,7 +86,7 @@ public class Controller {
 
 	/**
 	 * This method displays the received image in the GUI_Main.
-	 *
+	 * 
 	 * @param image
 	 */
 	public void changeImage(BufferedImage image) {
@@ -86,7 +94,8 @@ public class Controller {
 	}
 
 	/**
-	 * This method is responsible for closing the GUI_Main and opening the GUI_Log.
+	 * This method is responsible for closing the GUI_Main and opening the
+	 * GUI_Log.
 	 */
 	public void close() {
 		System.out.println("closing");
@@ -106,16 +115,16 @@ public class Controller {
 	}
 
 	/**
-	 *
+	 * 
 	 * @param msg
 	 */
 	public void connected(String msg) {
 		gui_log.dispose();
+
+		msg = decryptXOR(msg);
 		System.out.println("controller gui");
 		String[] items = msg.split(",");
-		//msg = decrypt(msg, "ABC");
-		//String[] items = msg.split(",");
-		//gui_main = new GUI_Main(this, items);
+
 		gui_main = new GUI_Main(this, items);
 
 	}
@@ -129,7 +138,7 @@ public class Controller {
 
 	/**
 	 * This method sends the chosen resolution and frame rate to the server.
-	 *
+	 * 
 	 * @param selectedItem
 	 * @param frameRate
 	 */
@@ -139,17 +148,22 @@ public class Controller {
 		clientThread.send(message);
 	}
 
-	public String decrypt(String msg, String key) {
+	public String decryptXOR(String msg) {
 		int message_length = msg.length();
-		System.out.println("1");
-		int key_length = key.length();
-		System.out.println("2");
+		int key_length = XoR.length();
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < message_length; i++) {
-			System.out.println("1OOP");
-			sb.append((char)( msg.charAt(i) ^ (key.charAt(i % key_length))));
+			sb.append((char) (msg.charAt(i) ^ (XoR.charAt(i % key_length))));
 		}
 		return (sb.toString());
+	}
+
+	public void setKey(String key) {
+		XoR = String.valueOf(rsa.RSADecrypt(Integer.parseInt(key)));
+	}
+
+	public void sendKey() {
+		clientThread.send(rsa.getE() + "," + rsa.getN());
 	}
 
 }

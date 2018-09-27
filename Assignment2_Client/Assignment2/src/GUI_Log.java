@@ -39,7 +39,7 @@ public class GUI_Log implements ActionListener {
 		ipLabel.setText("IP ADRESS");
 		TCPportLabel.setText("TCP PORT");
 		TCPportLabel.setForeground(Color.white);
-		ipField.setText("192.168.20.247");
+		ipField.setText("192.168.20.252");
 		TCPportField.setText("8080");
 		connectButton.setText("Connect");
 		ipField.setBounds(280, 50, 100, 25);

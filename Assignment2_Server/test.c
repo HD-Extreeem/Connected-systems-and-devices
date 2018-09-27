@@ -6,6 +6,7 @@
  */
 
 #include<stdio.h>
+#include<math.h>
 #include<string.h>    
 #include<stdlib.h>    
 #include<sys/socket.h>
@@ -16,8 +17,11 @@
 #include<capture.h>
 #include<syslog.h>
 
+
 //Connection handler assigned for each client
 void *msg_handler(void *);
+int gen_key(void);
+char* encrypt_char(char* message, char* key);
 
 /*
  * Connection_handler method that handles every independent client
@@ -27,11 +31,26 @@ void *msg_handler(void *socket_desc)
 {
     int socket = *(int*)socket_desc;
     int size;
-    char *msg, cli_message[2000];
+    char *msg, cli_message[2000],*xor ;
+    media_stream *stream;
+    int XoR_Key = gen_key();
+
+    recv(socket, cli_message, 2000, 0);
+    syslog(LOG_INFO, "recieved msg");
+    int e =atoi(strtok(cli_message,","));
+    uint32_t n = atoi(strtok(NULL,","));
+    
+    uint32_t encrypted = (((uint32_t)pow(XoR_Key,e))%n);
+    sprintf(msg,"%zu\n",encrypted);
+    write(socket, msg, strlen(msg));
+    syslog(LOG_INFO, "sent msg xor");
+    sprintf(xor,"%d",XoR_Key);
     msg = capture_get_resolutions_list(0);
+    msg= encrypt_char(msg,xor);
     write(socket, msg, strlen(msg));
     write(socket, "\n", 1);
     memset(msg, 0, strlen(msg));
+
     
     //Receive a message from the client
     while ((size = recv(socket, cli_message, 2000, 0)) > 0)
@@ -42,7 +61,7 @@ void *msg_handler(void *socket_desc)
         void     *data;
         size_t   img_size;
         int row = 0;
-        media_stream *stream;
+        
         
         stream = capture_open_stream(IMAGE_JPEG, cli_message);
         
@@ -76,11 +95,16 @@ void *msg_handler(void *socket_desc)
     else if (size == -1){
         syslog(LOG_INFO, "Failed to send, ERROR, CLOSING DOWN!");
         capture_close_stream(stream);
-        close(socket_desc);
+        close(socket);
         free(socket_desc);
         
     }
     return 0;
+}
+
+int gen_key(void){
+    int nbr = (rand()%4001)+1000;
+    return nbr;
 }
 
 
@@ -143,6 +167,17 @@ int main(void)
     }
     
     return 0;
+}
+
+char* encrypt_char(char* message, char* key){
+   int message_length = strlen(message);
+   int key_length = strlen(key);
+   char* encrypt_msg = malloc(message_length);
+   int i;
+   for ( i = 0; i< message_length; i++){
+       encrypt_msg[i] = message[i] ^ key[i%key_length];
+   }
+   return encrypt_msg;
 }
 
 

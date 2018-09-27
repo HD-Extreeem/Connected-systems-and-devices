@@ -52,6 +52,10 @@ public class ClientThread implements Runnable {
 			clientSocket = new Socket(IPadress, TCPport); // Create a socket
 			bufferedReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 			printStream = new PrintStream(clientSocket.getOutputStream());
+			controller.sendKey();
+			System.out.println("innan");
+			controller.setKey(bufferedReader.readLine().trim());
+			System.out.println("efter");
 			msg = bufferedReader.readLine().trim(); // read the message (available resolutions)
 			in = clientSocket.getInputStream();
 			System.out.println(msg);
