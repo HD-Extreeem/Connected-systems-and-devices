@@ -1,0 +1,1 @@
+AXIS_BUILDTYPE ?= mipsisa32r2el-axis-linux-gnu

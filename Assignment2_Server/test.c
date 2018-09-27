@@ -27,10 +27,8 @@ void *msg_handler(void *socket_desc)
 {
     int socket = *(int*)socket_desc;
     int size;
-    char *key = "ABC";
     char *msg, cli_message[2000];
     msg = capture_get_resolutions_list(0);
-    msg = encrypt_char(msg,key);
     write(socket, msg, strlen(msg));
     write(socket, "\n", 1);
     memset(msg, 0, strlen(msg));
@@ -147,13 +145,4 @@ int main(void)
     return 0;
 }
 
-char* encrypt_char(char* message, char* key){
-    int message_length = strlen(message);
-    int key_length = strlen(key);
-    char* encrypt_msg = malloc(message_length);
-    int i;
-    for ( i = 0; i< message_length; i++){
-        encrypt_msg[i] = message[i] ^ key[i%key_length];
-    }
-    return encrypt_msg;
-}
+

@@ -1,0 +1,413 @@
+
+----- System log -----
+
+2018-02-08T12:29:52.510+00:00 axis-00408ce8dd13 [ ERR     ] parhand[621]: Failed to write to file. Broken pipe
+2018-02-08T12:34:40.447+00:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-02-08T12:37:04.631+00:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-02-08T12:43:58.163+00:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-02-08T12:46:41.999+00:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-02-08T12:51:12.573+00:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-02-08T12:52:34.157+00:00 axis-00408ce8dd13 [ INFO    ] kernel: message repeated 4 times: [potentially unexpected fatal signal 11.]
+2018-02-08T12:55:54.721+00:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-02-08T12:56:55.218+00:00 axis-00408ce8dd13 [ INFO    ] kernel: message repeated 4 times: [potentially unexpected fatal signal 11.]
+2018-02-08T12:58:04.487+00:00 axis-00408ce8dd13 [ INFO    ] kernel: message repeated 2 times: [potentially unexpected fatal signal 11.]
+2018-02-08T13:01:37.868+00:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-02-08T13:03:04.787+00:00 axis-00408ce8dd13 [ INFO    ] kernel: message repeated 4 times: [potentially unexpected fatal signal 11.]
+2018-02-08T13:04:04.847+00:00 axis-00408ce8dd13 [ INFO    ] kernel: message repeated 2 times: [potentially unexpected fatal signal 11.]
+2018-09-06T10:18:00.669+02:00 axis-00408ce8dd13 [ CRIT    ] upload.cgi: Failed to unpack /tmp/hello_world: (tar: invalid magic#012tar: short read) (tar: invalid tar magic)
+2018-09-06T10:19:23.901+02:00 axis-00408ce8dd13 [ CRIT    ] upload.cgi: Failed to unpack /tmp/hello_world: (tar: invalid magic#012tar: short read) (tar: invalid tar magic)
+2018-09-06T10:19:35.207+02:00 axis-00408ce8dd13 [ CRIT    ] upload.cgi: Failed to unpack /tmp/hello_world.c: (tar: invalid magic#012tar: short read) (tar: invalid tar magic)
+2018-09-13T17:09:39.360+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-13T17:10:12.728+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-14T09:13:43.480+02:00 axis-00408ce8dd13 [ CRIT    ] upload.cgi: 'test' not found or not executable
+2018-09-14T09:14:12.039+02:00 axis-00408ce8dd13 [ CRIT    ] upload.cgi: 'test' not found or not executable
+2018-09-14T09:15:03.121+02:00 axis-00408ce8dd13 [ CRIT    ] upload.cgi: 'test' not found or not executable
+2018-09-14T09:35:19.007+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-14T09:36:20.596+02:00 axis-00408ce8dd13 [ CRIT    ] upload.cgi: 'test' not found or not executable
+2018-09-14T09:42:50.191+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-14T09:50:08.826+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-14T09:51:02.962+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-14T09:53:26.478+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-14T09:54:23.218+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-14T11:41:20.145+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-14T12:25:09.554+02:00 axis-00408ce8dd13 [ ERR     ] monolith[437]: (monolith) g_source_set_callback: assertion 'source != NULL' failed
+2018-09-14T12:25:09.556+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-14T12:25:09.787+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-14T12:47:54.034+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-14T13:55:31.678+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-14T13:55:32.287+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-17T12:55:35.372+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-17T15:47:13.010+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-17T16:04:00.919+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-17T16:04:21.527+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-17T16:05:46.077+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-17T16:06:32.316+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-17T16:09:03.909+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-20T17:36:19.691+02:00 axis-00408ce8dd13 [ ERR     ] cam_server_prog: Could not bind socket
+2018-09-21T13:06:58.274+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:07:11.264+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:07:11.275+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:07:24.287+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:07:24.307+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:07:37.289+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:07:37.299+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:07:50.290+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:07:50.292+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:08:03.261+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:08:03.272+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:08:16.287+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:08:16.292+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:08:29.267+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:08:29.277+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:08:42.293+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:08:42.294+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:08:55.283+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:08:55.291+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:09:08.276+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:09:08.290+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:09:21.300+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:09:21.301+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:09:34.340+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:09:34.347+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:09:47.312+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:09:47.319+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:10:00.306+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:10:00.311+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:10:13.327+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:10:13.332+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:10:26.316+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:10:26.323+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:10:39.302+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:10:39.314+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:10:52.462+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:10:52.475+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:11:06.291+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:11:06.292+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:11:19.284+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:11:19.294+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:11:32.273+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:11:32.283+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:11:45.275+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:11:45.287+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:11:58.291+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:11:58.292+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:12:11.357+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:12:11.365+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:12:24.286+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:12:24.291+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:12:37.285+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:12:37.293+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:12:50.288+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:12:50.306+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:13:03.292+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:13:03.302+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:13:16.311+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:13:16.322+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:13:29.300+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:13:29.306+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:13:42.279+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:13:42.281+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:13:55.286+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:13:55.294+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:14:08.299+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:14:08.304+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:14:18.127+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Action rule "Action4" is starting action "Send Video Clip"
+2018-09-21T13:14:18.175+02:00 axis-00408ce8dd13 [ INFO    ] monolith[22111]: Started saving stream for event "Action4".
+2018-09-21T13:14:21.286+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:14:21.287+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Aborting "Send Video Clip" action
+2018-09-21T13:14:21.295+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:14:31.120+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Action rule "Action4" is starting action "Send Video Clip"
+2018-09-21T13:14:31.162+02:00 axis-00408ce8dd13 [ INFO    ] monolith[22111]: Started saving stream for event "Action4".
+2018-09-21T13:14:34.277+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:14:34.288+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Aborting "Send Video Clip" action
+2018-09-21T13:14:34.291+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:14:44.125+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Action rule "Action4" is starting action "Send Video Clip"
+2018-09-21T13:14:44.164+02:00 axis-00408ce8dd13 [ INFO    ] monolith[22111]: Started saving stream for event "Action4".
+2018-09-21T13:14:46.116+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:14:47.284+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:14:47.291+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Aborting "Send Video Clip" action
+2018-09-21T13:14:47.292+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:14:49.022+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:14:51.716+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:14:51.716+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:14:51.869+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:14:57.132+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Action rule "Action4" is starting action "Send Video Clip"
+2018-09-21T13:14:57.162+02:00 axis-00408ce8dd13 [ INFO    ] monolith[22111]: Started saving stream for event "Action4".
+2018-09-21T13:15:00.290+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:15:00.291+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Aborting "Send Video Clip" action
+2018-09-21T13:15:00.291+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:15:04.162+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Uploaded '/tmp/test_1_0_mipsisa32r2el.eap' size:36638
+2018-09-21T13:15:04.707+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: calling: /etc/init.d/sdktest stop
+2018-09-21T13:15:04.772+02:00 axis-00408ce8dd13 [ INFO    ] test[0]: stopping test
+2018-09-21T13:15:07.289+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: [system] Reloaded configuration
+2018-09-21T13:15:09.744+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Package /tmp/test_1_0_mipsisa32r2el.eap installation OK
+2018-09-21T13:15:09.746+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: message repeated 2 times: [ [system] Reloaded configuration]
+2018-09-21T13:15:10.127+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Action rule "Action4" is starting action "Send Video Clip"
+2018-09-21T13:15:10.183+02:00 axis-00408ce8dd13 [ INFO    ] monolith[22111]: Started saving stream for event "Action4".
+2018-09-21T13:15:11.451+02:00 axis-00408ce8dd13 [ INFO    ] control.cgi: calling: /etc/init.d/sdktest start
+2018-09-21T13:15:11.786+02:00 axis-00408ce8dd13 [ INFO    ] test[0]: starting test
+2018-09-21T13:15:13.329+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:15:13.330+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Aborting "Send Video Clip" action
+2018-09-21T13:15:13.330+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:15:23.121+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Action rule "Action4" is starting action "Send Video Clip"
+2018-09-21T13:15:23.150+02:00 axis-00408ce8dd13 [ INFO    ] monolith[22111]: Started saving stream for event "Action4".
+2018-09-21T13:15:26.232+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:15:26.237+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Aborting "Send Video Clip" action
+2018-09-21T13:15:26.238+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:15:36.124+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Action rule "Action4" is starting action "Send Video Clip"
+2018-09-21T13:15:36.150+02:00 axis-00408ce8dd13 [ INFO    ] monolith[22111]: Started saving stream for event "Action4".
+2018-09-21T13:15:39.236+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:15:39.240+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Aborting "Send Video Clip" action
+2018-09-21T13:15:39.242+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:15:49.125+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Action rule "Action4" is starting action "Send Video Clip"
+2018-09-21T13:15:49.148+02:00 axis-00408ce8dd13 [ INFO    ] monolith[22111]: Started saving stream for event "Action4".
+2018-09-21T13:15:52.234+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:15:52.239+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Aborting "Send Video Clip" action
+2018-09-21T13:15:52.241+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:16:02.127+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Action rule "Action4" is starting action "Send Video Clip"
+2018-09-21T13:16:02.151+02:00 axis-00408ce8dd13 [ INFO    ] monolith[22111]: Started saving stream for event "Action4".
+2018-09-21T13:16:05.263+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:16:05.264+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Aborting "Send Video Clip" action
+2018-09-21T13:16:05.264+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:16:15.122+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Action rule "Action4" is starting action "Send Video Clip"
+2018-09-21T13:16:15.149+02:00 axis-00408ce8dd13 [ INFO    ] monolith[22111]: Started saving stream for event "Action4".
+2018-09-21T13:16:18.227+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:16:18.234+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Aborting "Send Video Clip" action
+2018-09-21T13:16:18.234+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:16:28.124+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Action rule "Action4" is starting action "Send Video Clip"
+2018-09-21T13:16:28.154+02:00 axis-00408ce8dd13 [ INFO    ] monolith[22111]: Started saving stream for event "Action4".
+2018-09-21T13:16:31.256+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:16:31.261+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Aborting "Send Video Clip" action
+2018-09-21T13:16:31.265+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:16:41.126+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Action rule "Action4" is starting action "Send Video Clip"
+2018-09-21T13:16:41.150+02:00 axis-00408ce8dd13 [ INFO    ] monolith[22111]: Started saving stream for event "Action4".
+2018-09-21T13:16:44.263+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:16:44.264+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Aborting "Send Video Clip" action
+2018-09-21T13:16:44.264+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:16:54.121+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Action rule "Action4" is starting action "Send Video Clip"
+2018-09-21T13:16:54.146+02:00 axis-00408ce8dd13 [ INFO    ] monolith[22111]: Started saving stream for event "Action4".
+2018-09-21T13:16:57.263+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:16:57.264+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Aborting "Send Video Clip" action
+2018-09-21T13:16:57.268+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:17:07.121+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Action rule "Action4" is starting action "Send Video Clip"
+2018-09-21T13:17:07.146+02:00 axis-00408ce8dd13 [ INFO    ] monolith[22111]: Started saving stream for event "Action4".
+2018-09-21T13:17:10.228+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:17:10.229+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Aborting "Send Video Clip" action
+2018-09-21T13:17:10.229+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:17:20.125+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Action rule "Action4" is starting action "Send Video Clip"
+2018-09-21T13:17:20.159+02:00 axis-00408ce8dd13 [ INFO    ] monolith[22111]: Started saving stream for event "Action4".
+2018-09-21T13:17:23.346+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: An error occurred in "Send Video Clip" action: failed to transfer data: Couldn't connect to server
+2018-09-21T13:17:23.351+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Aborting "Send Video Clip" action
+2018-09-21T13:17:23.352+02:00 axis-00408ce8dd13 [ WARNING ] actionengined[1080]: Action failed, retry will be done in 10 seconds
+2018-09-21T13:17:32.069+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Removing "Send Video Clip" action
+2018-09-21T13:17:32.131+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Removing "Action4" action rule
+2018-09-21T13:17:32.252+02:00 axis-00408ce8dd13 [ NOTICE  ] actionengined[1080]: Creating "Action4" action rule
+2018-09-21T13:17:43.206+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: [system] Reloaded configuration
+2018-09-21T13:17:56.199+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Uploaded '/tmp/test_1_0_mipsisa32r2el.eap' size:36639
+2018-09-21T13:17:56.201+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: message repeated 2 times: [ [system] Reloaded configuration]
+2018-09-21T13:17:56.523+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: calling: /etc/init.d/sdktest stop
+2018-09-21T13:17:56.568+02:00 axis-00408ce8dd13 [ INFO    ] test[0]: stopping test
+2018-09-21T13:17:57.527+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: [system] Reloaded configuration
+2018-09-21T13:17:59.214+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Package /tmp/test_1_0_mipsisa32r2el.eap installation OK
+2018-09-21T13:17:59.216+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: message repeated 2 times: [ [system] Reloaded configuration]
+2018-09-21T13:18:00.554+02:00 axis-00408ce8dd13 [ INFO    ] control.cgi: calling: /etc/init.d/sdktest start
+2018-09-21T13:18:00.842+02:00 axis-00408ce8dd13 [ INFO    ] test[0]: starting test
+2018-09-21T13:18:03.703+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:18:06.909+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:18:13.400+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:18:13.401+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:18:13.538+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:18:16.043+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:18:24.006+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:18:28.350+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:18:28.350+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:18:28.464+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:18:30.886+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:18:35.319+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:18:37.381+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:18:37.383+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:18:37.472+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:18:52.804+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:18:55.631+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:19:02.016+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:19:02.019+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:19:02.106+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:19:04.790+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:19:09.657+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:19:20.981+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:19:20.982+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:19:21.041+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:20:22.937+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Uploaded '/tmp/test_1_0_mipsisa32r2el.eap' size:36639
+2018-09-21T13:20:23.467+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: calling: /etc/init.d/sdktest stop
+2018-09-21T13:20:23.531+02:00 axis-00408ce8dd13 [ INFO    ] test[0]: stopping test
+2018-09-21T13:20:25.002+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: [system] Reloaded configuration
+2018-09-21T13:20:26.639+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Package /tmp/test_1_0_mipsisa32r2el.eap installation OK
+2018-09-21T13:20:26.640+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: message repeated 2 times: [ [system] Reloaded configuration]
+2018-09-21T13:20:27.971+02:00 axis-00408ce8dd13 [ INFO    ] control.cgi: calling: /etc/init.d/sdktest start
+2018-09-21T13:20:28.263+02:00 axis-00408ce8dd13 [ INFO    ] test[0]: starting test
+2018-09-21T13:22:41.597+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Uploaded '/tmp/test_1_0_mipsisa32r2el.eap' size:36630
+2018-09-21T13:22:41.919+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: calling: /etc/init.d/sdktest stop
+2018-09-21T13:22:41.964+02:00 axis-00408ce8dd13 [ INFO    ] test[0]: stopping test
+2018-09-21T13:22:42.927+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: [system] Reloaded configuration
+2018-09-21T13:22:44.561+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Package /tmp/test_1_0_mipsisa32r2el.eap installation OK
+2018-09-21T13:22:44.562+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: message repeated 2 times: [ [system] Reloaded configuration]
+2018-09-21T13:22:45.912+02:00 axis-00408ce8dd13 [ INFO    ] control.cgi: calling: /etc/init.d/sdktest start
+2018-09-21T13:22:46.207+02:00 axis-00408ce8dd13 [ INFO    ] test[0]: starting test
+2018-09-21T13:22:51.562+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:22:56.856+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:23:39.438+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Uploaded '/tmp/test_1_0_mipsisa32r2el.eap' size:36638
+2018-09-21T13:23:39.786+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: calling: /etc/init.d/sdktest stop
+2018-09-21T13:23:39.838+02:00 axis-00408ce8dd13 [ INFO    ] test[0]: stopping test
+2018-09-21T13:23:40.880+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: [system] Reloaded configuration
+2018-09-21T13:23:42.505+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Package /tmp/test_1_0_mipsisa32r2el.eap installation OK
+2018-09-21T13:23:42.507+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: message repeated 2 times: [ [system] Reloaded configuration]
+2018-09-21T13:23:43.840+02:00 axis-00408ce8dd13 [ INFO    ] control.cgi: calling: /etc/init.d/sdktest start
+2018-09-21T13:23:44.143+02:00 axis-00408ce8dd13 [ INFO    ] test[0]: starting test
+2018-09-21T13:23:49.640+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:23:50.768+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:23:55.851+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:23:55.852+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:23:55.955+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:23:58.718+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:24:01.857+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:24:06.852+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:24:06.852+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:24:06.932+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:24:09.304+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:24:12.471+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:24:15.460+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:24:15.461+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:24:15.513+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:24:17.928+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:24:20.440+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:24:28.993+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:24:28.999+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:24:29.105+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:24:31.767+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:24:35.471+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:24:38.689+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:24:38.689+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:24:38.832+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:25:15.349+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:25:19.432+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:25:26.454+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:25:26.455+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:25:26.626+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:26:45.905+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:26:50.632+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:30:52.705+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:30:52.706+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:30:52.848+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:30:56.701+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:31:02.202+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:31:19.483+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:31:19.483+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:31:19.649+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:31:27.681+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:31:34.378+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:31:34.421+02:00 axis-00408ce8dd13 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-21T13:32:12.947+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:32:16.881+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:32:27.926+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:32:27.927+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:32:28.116+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:37:16.177+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:37:21.286+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:37:34.985+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:37:34.986+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:37:35.153+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:38:14.424+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:38:20.444+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:38:29.806+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:38:29.810+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:38:29.979+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:38:40.290+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Uploaded '/tmp/test_1_0_mipsisa32r2el.eap' size:36641
+2018-09-21T13:38:40.938+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: calling: /etc/init.d/sdktest stop
+2018-09-21T13:38:41.006+02:00 axis-00408ce8dd13 [ INFO    ] test[0]: stopping test
+2018-09-21T13:38:43.036+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: [system] Reloaded configuration
+2018-09-21T13:38:44.826+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Package /tmp/test_1_0_mipsisa32r2el.eap installation OK
+2018-09-21T13:38:44.828+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: message repeated 2 times: [ [system] Reloaded configuration]
+2018-09-21T13:38:46.169+02:00 axis-00408ce8dd13 [ INFO    ] control.cgi: calling: /etc/init.d/sdktest start
+2018-09-21T13:38:46.463+02:00 axis-00408ce8dd13 [ INFO    ] test[0]: starting test
+2018-09-21T13:39:26.657+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Uploaded '/tmp/test_1_0_mipsisa32r2el.eap' size:36658
+2018-09-21T13:39:26.977+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: calling: /etc/init.d/sdktest stop
+2018-09-21T13:39:27.021+02:00 axis-00408ce8dd13 [ INFO    ] test[0]: stopping test
+2018-09-21T13:39:27.978+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: [system] Reloaded configuration
+2018-09-21T13:39:29.616+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Package /tmp/test_1_0_mipsisa32r2el.eap installation OK
+2018-09-21T13:39:29.617+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: message repeated 2 times: [ [system] Reloaded configuration]
+2018-09-21T13:39:30.940+02:00 axis-00408ce8dd13 [ INFO    ] control.cgi: calling: /etc/init.d/sdktest start
+2018-09-21T13:39:31.236+02:00 axis-00408ce8dd13 [ INFO    ] test[0]: starting test
+2018-09-21T13:39:42.001+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:39:46.804+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:40:08.782+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:40:08.786+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:40:08.900+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:40:33.053+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:40:38.643+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:40:50.716+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:40:50.716+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:40:50.797+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:42:14.544+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Uploaded '/tmp/test_1_0_mipsisa32r2el.eap' size:36678
+2018-09-21T13:42:14.961+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: calling: /etc/init.d/sdktest stop
+2018-09-21T13:42:15.011+02:00 axis-00408ce8dd13 [ INFO    ] test[0]: stopping test
+2018-09-21T13:42:16.224+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: [system] Reloaded configuration
+2018-09-21T13:42:17.854+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Package /tmp/test_1_0_mipsisa32r2el.eap installation OK
+2018-09-21T13:42:17.857+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: message repeated 2 times: [ [system] Reloaded configuration]
+2018-09-21T13:42:19.205+02:00 axis-00408ce8dd13 [ INFO    ] control.cgi: calling: /etc/init.d/sdktest start
+2018-09-21T13:42:19.497+02:00 axis-00408ce8dd13 [ INFO    ] test[0]: starting test
+2018-09-21T13:42:21.219+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:42:26.060+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:42:32.208+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:42:32.209+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:42:32.329+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:42:58.825+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:43:04.060+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:43:16.621+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:43:16.622+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:43:16.687+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:43:21.408+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:43:26.397+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:43:43.783+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:43:43.783+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:43:43.854+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:43:53.441+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:43:56.494+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:43:59.384+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:43:59.388+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:43:59.469+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:44:02.319+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:44:04.279+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:44:12.485+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:44:12.486+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:44:12.545+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:44:15.869+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:44:20.836+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:44:26.069+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:44:26.070+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:44:26.148+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:44:37.460+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:44:40.633+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:45:02.086+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:45:02.087+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:45:02.204+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:48:55.049+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:48:58.112+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:49:43.727+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:49:43.730+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:49:43.805+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:49:51.372+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:49:54.014+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:50:00.735+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:50:00.736+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:50:00.800+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:50:04.926+02:00 axis-00408ce8dd13 [ INFO    ] test: Handler!
+2018-09-21T13:50:07.041+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:50:12.237+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:50:12.245+02:00 axis-00408ce8dd13 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-21T13:50:12.307+02:00 axis-00408ce8dd13 [ INFO    ] test: Client is disconnected
+2018-09-21T13:50:19.528+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Uploaded '/tmp/test_1_0_mipsisa32r2el.eap' size:36676
+2018-09-21T13:50:20.034+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: calling: /etc/init.d/sdktest stop
+2018-09-21T13:50:20.103+02:00 axis-00408ce8dd13 [ INFO    ] test[0]: stopping test
+2018-09-21T13:50:21.930+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: [system] Reloaded configuration
+2018-09-21T13:50:23.577+02:00 axis-00408ce8dd13 [ INFO    ] upload.cgi: Package /tmp/test_1_0_mipsisa32r2el.eap installation OK
+2018-09-21T13:50:23.579+02:00 axis-00408ce8dd13 [ NOTICE  ] dbus[614]: message repeated 2 times: [ [system] Reloaded configuration]
