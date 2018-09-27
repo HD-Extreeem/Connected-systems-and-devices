@@ -4,6 +4,15 @@ import java.nio.CharBuffer;
 
 import javax.swing.JOptionPane;
 
+/**
+ * 
+ * @author Yurdaer Dalkic & Hadi Deknache
+ * 
+ *         This class handles all logical operations etc. connection with
+ *         server, closing GUI_Log and opening GUI_Main, changing received
+ *         images on the display, closing the connection with the server...
+ *
+ */
 public class Controller {
 
 	private GUI_Log gui_log;
@@ -12,19 +21,20 @@ public class Controller {
 	private String TCPport;
 	private ClientThread clientThread;
 	private String res;
-	private String[] resolutions = new String[] { "360x360", "560x560",
-			"480x480", "280x280", "2800x2800" };
+	private String[] resolutions = new String[] { "360x360", "560x560", "480x480", "280x280", "2800x2800" };
 
+	/**
+	 * Constructor which starts the GUI_Log in order to allow user type in IP
+	 * address and Port number of the server.
+	 */
 	public Controller() {
 		gui_log = new GUI_Log(this);
 	}
 
 	/**
-	 * Metoden anropas n�r man vill att programmet ansluta till servern. Metoden
-	 * kontrollerar IP, TCPport och UDPPort f�lt om dem �r tom f�r�ker ansluta
-	 * TCP server och UDP server. Om programmet har anslutning till TCP server
-	 * st�ngs ner f�nstret och �ppnas ett nyt f�nster som anv�nderen kan styra
-	 * bilen.
+	 * This method calls when user click the button on GUI_Log. This method checks
+	 * the IP address and port number and starts a new thread which handles the
+	 * communication with the server (ClientThread).
 	 * 
 	 * @throws IOException
 	 * @throws NumberFormatException
@@ -33,14 +43,13 @@ public class Controller {
 		this.IPadress = gui_log.getIP();
 		this.TCPport = gui_log.getPort();
 
-		// Anv�ndaren m�ste mata in IP och Port nummer f�r att kunna ansluta
-		// till server
+		// Check the IP address and port number
 		if (IPadress.length() == 0 || TCPport.length() == 0) {
 			fail();
 		}
 		//
 		else {
-			// anslutar rill TCP och UDP server
+			// Start a new threat which will handles the communication with the server
 			clientThread = new ClientThread(this, IPadress, TCPport);
 			clientThread.setIsRunning(true);
 			Thread cliThread = new Thread(clientThread);
@@ -50,32 +59,34 @@ public class Controller {
 	}
 
 	/**
-	 * Visar ett fellmeddalende som informerar anv�ndraren om Ip nummer eller
-	 * port nummer har inte angivits.
+	 * This method displays a message dialog that inform the user about there is
+	 * something wrong with IP address or port number
 	 */
 	public void fail() {
 		JOptionPane.showMessageDialog(null, "Enter IP adress and Port number");
 	}
 
+	/**
+	 * This method displays a message dialog with received string.
+	 * 
+	 * @param message
+	 */
 	public void error(String message) {
 		JOptionPane.showMessageDialog(null, message);
 		gui_log.disableButton(true);
 	}
 
 	/**
-	 * Metoden tar emot en str�ng som representerar s�gv�gen av ny bild som ska
-	 * visas i f�nstrer och skickar den s�gv�gen till GUI_Main klassen.
+	 * This method displays the received image in the GUI_Main.
 	 * 
-	 * @param imagePath
-	 *            s�kv�gen av ny bilden.
+	 * @param image
 	 */
 	public void changeImage(BufferedImage image) {
 		gui_main.changePath(image);
 	}
 
 	/**
-	 * Metoden st�nger ner anslutningen till server, st�nger ner f�nster
-	 * (GUI_Main) och �ppnar f�rsta f�nster (GUI_Log).
+	 * This method is responsible for closing the GUI_Main and opening the GUI_Log.
 	 */
 	public void close() {
 		System.out.println("closing");
@@ -85,12 +96,19 @@ public class Controller {
 
 	}
 
+	/**
+	 * This method closes the connection with the server.
+	 */
 	public void closeConection() {
 		System.out.println("closing conenction");
 		clientThread.close();
 
 	}
 
+	/**
+	 * 
+	 * @param msg
+	 */
 	public void connected(String msg) {
 		gui_log.dispose();
 		System.out.println("controller gui");
@@ -99,15 +117,23 @@ public class Controller {
 
 	}
 
+	/**
+	 * This method is not currently used.
+	 */
 	public void rutin() {
 		clientThread.send(res);
 	}
 
+	/**
+	 * This method sends the chosen resolution and frame rate to the server.
+	 * 
+	 * @param selectedItem
+	 * @param frameRate
+	 */
 	public void update(String selectedItem, String frameRate) {
-		String message =  "resolution=" + selectedItem + "&fps=" + frameRate;
+		String message = "resolution=" + selectedItem + "&fps=" + frameRate;
 		res = message;
 		clientThread.send(message);
-		// gui_main.isActive(false);
 	}
 
 }

@@ -1,15 +1,15 @@
 
-
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 /**
- * Innre klassen som representerar en JPanel och ritar bilden som ska visas
- * panellen.
+ * The inner class representing a JPanel and draws the image to display the
+ * panel.
  * 
- * @author Yurdaer Dalkic
+ * 
+ * @author Yurdaer Dalkic & Hadi Deknache
  *
  */
 @SuppressWarnings("serial")
@@ -17,9 +17,9 @@ public class Picture2 extends JPanel {
 	private String Path;
 
 	/**
-	 * Konstruktor tar emot sökvägen av bilden som ska visas i panellen.
+	 * Constructor receives the path of the image that will displays in the panel.
 	 * 
-	 * @param Ipath sökvägen av bilden
+	 * @param Path of the image
 	 */
 	public Picture2(String Ipath) {
 		this.Path = Ipath;

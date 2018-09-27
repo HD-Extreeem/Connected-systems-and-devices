@@ -9,7 +9,10 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 /**
- * Class for sending message
+ * @author Yurdaer Dalkic & Hadi Deknache
+ * 
+ * This class handles the connection with the server, receiving/sending messages
+ * and images.
  */
 public class ClientThread implements Runnable {
 	private Controller controller;
@@ -27,6 +30,12 @@ public class ClientThread implements Runnable {
 	private boolean isStrNull = false;
 	private String msg;
 
+	/**
+	 * 
+	 * @param controller
+	 * @param iPadress
+	 * @param tCPport
+	 */
 	public ClientThread(Controller controller, String iPadress, String tCPport) {
 		this.controller = controller;
 		this.IPadress = iPadress;
@@ -36,71 +45,39 @@ public class ClientThread implements Runnable {
 	@Override
 	public void run() {
 		/*
-		 * When everything is initialized, then we can send message to server Is
-		 * sent through socket that was opened!
+		 * When everything is initialized, then we can send message to server Is sent
+		 * through socket that was opened!
 		 */
 		try {
-			clientSocket = new Socket(IPadress, TCPport);
-			bufferedReader = new BufferedReader(new InputStreamReader(
-					clientSocket.getInputStream()));
+			clientSocket = new Socket(IPadress, TCPport); // Create a socket
+			bufferedReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 			printStream = new PrintStream(clientSocket.getOutputStream());
-			msg = bufferedReader.readLine().trim();
+			msg = bufferedReader.readLine().trim(); // read the message (available resolutions)
 			in = clientSocket.getInputStream();
 			System.out.println(msg);
-			controller.connected(msg);
+			controller.connected(msg); // send receives message to the controller
 			stream = new BufferedInputStream(in);
-
-			// bufferedReader.close();
 		} catch (Exception e) {
-			controller.error("Access refused");
+			controller.error("Access refused"); // inform the controller about the error
 		}
 
 		while (isRunning) {
 
-			if (clientSocket != null && clientSocket.isConnected()) {
+			if (clientSocket != null && clientSocket.isConnected()) { // check if we are still connected to the server
 				try {
-					/*
-					 * stream = new BufferedInputStream(in); if (!isImgNull) {
-					 * String msg2;
-					 * 
-					 * do {
-					 * 
-					 * // String msg2; msg2 = bufferedReader.readLine(); //
-					 * while ((msg2 = bufferedReader.readLine()) != // null);
-					 * System.out.println(msg2); try { length =
-					 * Integer.parseInt(msg2); isStrNull = false; } catch
-					 * (Exception e) { isStrNull = true;
-					 * System.out.println("Error int"); } buf = new
-					 * byte[length]; } while (isStrNull);
-					 * 
-					 * }
-					 */
 
-					// System.out.println(clientSocket.isClosed());
-					/*
-					 * //length = bufferedReader.read(); //
-					 * System.out.println(readInt(in));
-					 * 
-					 * // in = clientSocket.getInputStream(); // byte[] byts =
-					 * new byte[msg+1]; // int caount = in.read(byts); //
-					 * InputStream inBytes = new ByteArrayInputStream(byts); //
-					 * img = ImageIO.read(inBytes); //img = ImageIO.read(in);
-					 */
-					bufferedReader = new BufferedReader(new InputStreamReader(
-							clientSocket.getInputStream()));
-
-					msg = bufferedReader.readLine();
+					bufferedReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+					msg = bufferedReader.readLine(); // read the size of next image
 					in = clientSocket.getInputStream();
 					stream = new BufferedInputStream(in);
-					if (isNumber(msg) & msg.length() > 2) {
+					if (isNumber(msg) & msg.length() > 2) { // check the size of image
 						length = Integer.parseInt(msg);
 						System.out.println(msg);
 						imgBuf = new byte[length];
 					}
 
-					for (int read = 0; read < length;) {
+					for (int read = 0; read < length;) { // read until the byte array is filled
 						read += stream.read(imgBuf, read, imgBuf.length - read);
-						// System.out.println("test");
 					}
 					img = ImageIO.read(new ByteArrayInputStream(imgBuf));
 
@@ -108,13 +85,8 @@ public class ClientThread implements Runnable {
 						controller.changeImage(img);
 						img = null;
 						System.out.println("SUCCESS!");
-						// isImgNull = false;
-						// controller.rutin();
-						// System.out.println(length);
-					} /*
-					 * else { System.out.println("image is null"); isImgNull =
-					 * true; }
-					 */
+
+					}
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -155,6 +127,9 @@ public class ClientThread implements Runnable {
 		printStream.println(msg);
 	}
 
+	/**
+	 * Close the socket and print stream
+	 */
 	public void stop() {
 		if (!clientSocket.isConnected()) {
 			printStream.close();
@@ -168,6 +143,9 @@ public class ClientThread implements Runnable {
 
 	}
 
+	/**
+	 * Close the socket
+	 */
 	public void close() {
 		isRunning = false;
 		try {
@@ -179,6 +157,11 @@ public class ClientThread implements Runnable {
 
 	}
 
+	/**
+	 * This method checks if a string can converts to the integer
+	 * @param msg
+	 * @return
+	 */
 	private boolean isNumber(String msg) {
 		for (int i = 0; i < msg.length(); i++) {
 			if (!Character.isDigit(msg.charAt(i))) {

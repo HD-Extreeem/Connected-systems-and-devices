@@ -4,7 +4,16 @@ import java.awt.image.BufferedImage;
 import java.awt.*;
 import javax.swing.*;
 
-public class GUI_Main implements ActionListener {
+/**
+ * 
+ * @author Yurdaer Dalkic & Hadi Deknache
+ * 
+ *         This class represents a GUI which displays the most recent image,
+ *         allows the user choosing available image resolution that will be
+ *         captured by the server and choosing the frame rate of the capturing
+ *         image.
+ */
+class GUI_Main implements ActionListener {
 	private Controller controller;
 	private JPanel background = new Picture2("src/files/background1.jpg");
 	private JFrame frame = new JFrame();
@@ -17,6 +26,12 @@ public class GUI_Main implements ActionListener {
 	private JLabel fpsLabel = new JLabel();
 	private JTextField fpsField = new JTextField();
 
+	/**
+	 * Only constructor in the class. Creates a GUI with available resolutions.
+	 * 
+	 * @param controller
+	 * @param resolution
+	 */
 	public GUI_Main(Controller controller, String[] resolution) {
 		this.controller = controller;
 		this.resolution = resolution;
@@ -29,11 +44,7 @@ public class GUI_Main implements ActionListener {
 		updateButton.setText("Update");
 		updateButton.setFont(new Font("Serif", Font.BOLD, 16));
 		resolutionsBox = new JComboBox<>(resolution);
-		//GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-
-		//int centerX = (gd.getDisplayMode().getWidth()) / 2 - 250;
 		int centerX = 200;
-		// tas bor titel bar
 		frame.setUndecorated(true);
 		frame.setLayout(null);
 		frame.setSize(1000, 1000);
@@ -50,11 +61,8 @@ public class GUI_Main implements ActionListener {
 		exitButton.setOpaque(false);
 		exitButton.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));
 		exitButton.setFont(new Font("default", Font.BOLD, 25));
-		// om man trycker p� knappen programmet ska st�ng ner
 		frame.setTitle("Assignment1");
 		frame.setResizable(false);
-		// fullsk�rm
-	//	frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		background.setBounds(0, 0, frame.getWidth(), frame.getHeight());
 		background.setOpaque(false);
 		exitButton.setBounds(frame.getWidth() - 60, 10, 40, 40);
@@ -74,14 +82,13 @@ public class GUI_Main implements ActionListener {
 	}
 
 	/**
-	 * Metoden tar emot en st�ng som representerar s�kv�gen av en bild. Den
-	 * gamla bild tas bort fr�n f�nster och den nya bilden visas.
+	 * This method displays the received image on the GUI.
 	 * 
-	 * @param path
+	 * @param image2
 	 */
 	public void changePath(BufferedImage image2) {
 
-		image= null;
+		image = null;
 		image = new Picture(image2);
 		tabbed.remove(0);
 		tabbed.add(image, 0);
@@ -90,17 +97,22 @@ public class GUI_Main implements ActionListener {
 
 	}
 
-
-
+	/**
+	 * This method close the hole GUI.
+	 */
 	public void dispose() {
 		frame.dispose();
 	}
 
+	/**
+	 * This method handles the operations that will be performs with various
+	 * pushbuttons.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == updateButton) {
-			controller.update((String)resolutionsBox.getSelectedItem(), fpsField.getText());
-		
+			controller.update((String) resolutionsBox.getSelectedItem(), fpsField.getText());
+
 		} else if (e.getSource() == exitButton) {
 			controller.closeConection();
 			System.exit(0);
@@ -108,12 +120,11 @@ public class GUI_Main implements ActionListener {
 
 	}
 
+	/**
+	 * This method enable/disable the updateButton.
+	 */
 	public void isActive(boolean b) {
-		updateButton.setEnabled(b);	
+		updateButton.setEnabled(b);
 	}
-
-	
-	
-	
 
 }

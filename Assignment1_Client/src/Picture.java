@@ -8,10 +8,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 /**
- * Innre klassen som representerar en JPanel och ritar bilden som ska visas
- * panellen.
+ * The inner class representing a JPanel and draws the image to display the panel.
  * 
- * @author Yurdaer Dalkic
+ * @author Yurdaer Dalkic & Hadi Deknache
  *
  */
 @SuppressWarnings("serial")
@@ -19,9 +18,9 @@ public class Picture extends JPanel {
 	private BufferedImage image;
 
 	/**
-	 * Konstruktor tar emot s�kv�gen av bilden som ska visas i panellen.
+	 * Constructor receives the image that will displays in the panel.
 	 * 
-	 * @param Ipath s�kv�gen av bilden
+	 * @param image
 	 */
 	public Picture(BufferedImage image) {
 		this.image = image;
