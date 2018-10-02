@@ -27,30 +27,29 @@ void *msg_handler(void *socket_desc)
 {
     int socket = *(int*)socket_desc;
     int size;
-    char *key = "ABC";
     char *msg, cli_message[2000];
     msg = capture_get_resolutions_list(0);
-    msg = encrypt_char(msg,key);
     write(socket, msg, strlen(msg));
     write(socket, "\n", 1);
     memset(msg, 0, strlen(msg));
+    media_stream *stream;
     
     //Receive a message from the client
     while ((size = recv(socket, cli_message, 2000, 0)) > 0)
     {
         
-        //Sends the message back to the client
+        //Variables used for handling the img
         media_frame  *frame;
         void     *data;
         size_t   img_size;
         int row = 0;
-        media_stream *stream;
         
+        //Opens a stream to the camera to get the img
         stream = capture_open_stream(IMAGE_JPEG, cli_message);
         
+        //Continiously sends the img to client
         while (1) {
             frame = capture_get_frame(stream);
-            
             data = capture_frame_data(frame);
             img_size  = capture_frame_size(frame);
             
@@ -63,11 +62,14 @@ void *msg_handler(void *socket_desc)
             }
             
             int error = write(socket, row_data, sizeof(row_data));
+	    //Checking if the write failed
+	    //Might then be that the client disconnected
             if (error < 0) {
                 syslog(LOG_INFO, "Client is disconnected");
                 break;
             }
             
+	    //Emptying the variables to be sure nothing is stored 
             memset(data, 0, sizeof(data));
             memset(row_data, 0, sizeof(row_data));
             capture_frame_free(frame);
@@ -78,9 +80,7 @@ void *msg_handler(void *socket_desc)
     else if (size == -1){
         syslog(LOG_INFO, "Failed to send, ERROR, CLOSING DOWN!");
         capture_close_stream(stream);
-        close(socket_desc);
-        free(socket_desc);
-        
+        close(socket); 
     }
     return 0;
 }
@@ -145,15 +145,4 @@ int main(void)
     }
     
     return 0;
-}
-
-char* encrypt_char(char* message, char* key){
-    int message_length = strlen(message);
-    int key_length = strlen(key);
-    char* encrypt_msg = malloc(message_length);
-    int i;
-    for ( i = 0; i< message_length; i++){
-        encrypt_msg[i] = message[i] ^ key[i%key_length];
-    }
-    return encrypt_msg;
 }
