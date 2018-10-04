@@ -53,9 +53,9 @@ public class ClientThread implements Runnable {
 			bufferedReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 			printStream = new PrintStream(clientSocket.getOutputStream());
 			controller.sendKey();
-			System.out.println("innan");
+			System.out.println("sending key");
 			controller.setKey(bufferedReader.readLine().trim());
-			System.out.println("efter");
+			System.out.println("the key is sended");
 			msg = bufferedReader.readLine().trim(); // read the message (available resolutions)
 			in = clientSocket.getInputStream();
 			System.out.println(msg);

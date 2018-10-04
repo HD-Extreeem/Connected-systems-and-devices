@@ -40,9 +40,11 @@ void *msg_handler(void *socket_desc)
     int e =atoi(strtok(cli_message,","));
     uint32_t n = atoi(strtok(NULL,","));
     
-    uint32_t encrypted = (((uint32_t)pow(XoR_Key,e))%n);
-    sprintf(msg,"%zu\n",encrypted);
-    write(socket, msg, strlen(msg));
+double encrypted = ((pow(XoR_Key,e))%n);
+    //sprintf(msg,"%zu\n",encrypted);		
+send(socket,(char *)&encrypted ,sizeof(double),NULL);
+
+ //   write(socket, msg, strlen(msg));
     syslog(LOG_INFO, "sent msg xor");
     sprintf(xor,"%d",XoR_Key);
     msg = capture_get_resolutions_list(0);
@@ -62,9 +64,7 @@ void *msg_handler(void *socket_desc)
         size_t   img_size;
         int row = 0;
         
-        
         stream = capture_open_stream(IMAGE_JPEG, cli_message);
-        
         while (1) {
             frame = capture_get_frame(stream);
             

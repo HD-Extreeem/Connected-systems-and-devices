@@ -8,7 +8,7 @@ public class RSA {
 	int p, q, e, n, z, d = 0;
 
 	public RSA() {
-		ArrayList<Integer> primes = getPrime(1000, 10000);
+		ArrayList<Integer> primes = getPrime(100, 500);
 		Random random = new Random();
 
 		p = primes.get(random.nextInt(primes.size()));
@@ -20,14 +20,11 @@ public class RSA {
 		}
 
 		n = p * q;
-
 		z = (q - 1) * (p - 1);
-
 		for (e = 2; e < n; e++) {
 			if ((genE(e, z)) == 1) {
 				break;
 			}
-
 		}
 
 		while (true) {
