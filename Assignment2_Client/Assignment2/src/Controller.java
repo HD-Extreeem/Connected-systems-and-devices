@@ -26,6 +26,8 @@ public class Controller {
 	private String res;
 	private RSA rsa;
 	private String XoR;
+	private int xor;
+	
 	private String[] resolutions = new String[] { "360x360", "560x560",
 			"480x480", "280x280", "2800x2800" };
 
@@ -120,8 +122,6 @@ public class Controller {
 	 */
 	public void connected(String msg) {
 		gui_log.dispose();
-
-		msg = decryptXOR(msg);
 		System.out.println("controller gui");
 		String[] items = msg.split(",");
 
@@ -146,6 +146,7 @@ public class Controller {
 		String message = "resolution=" + selectedItem + "&fps=" + frameRate;
 		res = message;
 		clientThread.send(message);
+		gui_main.isActive(false);
 	}
 
 	public String decryptXOR(String msg) {
@@ -153,13 +154,32 @@ public class Controller {
 		int key_length = XoR.length();
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < message_length; i++) {
-			sb.append((char) (msg.charAt(i) ^ (XoR.charAt(i % key_length))));
+			sb.append((char) (msg.charAt(i) ^ (XoR.charAt(i % key_length)-48)));
 		}
 		return (sb.toString());
 	}
+	
+	public byte[] decryptImage(byte[] image) {
+		int message_length = image.length;
+		int key_length = XoR.length();
+		byte[] arr = XoR.getBytes();
+		byte[] temp = new byte[message_length];
+		for (int i = 0; i < message_length; i++) {
+		//	temp[i]=(byte) (image[i] ^ (XoR.charAt(i % key_length)-48));
+			temp[i]= (byte) (image[i] ^ xor);
+		//	sb.append((char) (msg.charAt(i) ^ (XoR.charAt(i % key_length))));
+		}
+		//System.out.println(sb.toString());
+		//return (sb.toString());
+		return temp;
+	}
 
-	public void setKey(String key) {
-		XoR = String.valueOf(rsa.RSADecrypt(Integer.parseInt(key)));
+	public void setKey(String XOR) {
+		//XoR = String.valueOf(rsa.RSADecrypt(Integer.parseInt(key)));
+		xor = (int) Double.parseDouble(XOR);
+		
+		XoR = String.valueOf(rsa.RSADecrypt(xor));
+		System.out.println("XOR key ="+XoR);
 	}
 
 	public void sendKey() {
