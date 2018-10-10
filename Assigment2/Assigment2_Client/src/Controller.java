@@ -124,7 +124,6 @@ public class Controller {
 		gui_log.dispose();
 		System.out.println("controller gui");
 		String[] items = msg.split(",");
-
 		gui_main = new GUI_Main(this, items);
 
 	}
@@ -145,7 +144,7 @@ public class Controller {
 	public void update(String selectedItem, String frameRate) {
 		String message = "resolution=" + selectedItem + "&fps=" + frameRate;
 		res = message;
-		clientThread.send(message);
+		clientThread.send(decryptXOR(message));
 		gui_main.isActive(false);
 	}
 

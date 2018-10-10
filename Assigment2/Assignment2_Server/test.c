@@ -68,8 +68,14 @@ void *msg_handler(void *socket_desc)
         void     *data;
         size_t   img_size;
         int row = 0;
-        
+
+
+        char *encrypt5;
+        strcpy(encrypt5,cli_message);
+        encrypt5=encrypt_char(encrypt5,xor);
+        strcpy(cli_message,encrypt5);
         stream = capture_open_stream(IMAGE_JPEG, cli_message);
+        free(encrypt5);
         while (1) {
             frame = capture_get_frame(stream);
             
