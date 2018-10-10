@@ -1,0 +1,193 @@
+
+----- System log -----
+
+2018-09-20T11:39:49.824+00:00 axis-accc8e2da5e5 [ WARNING ] disks[687]: disk.c : Disk disruption detection status changed for SD_DISK. Status = 'disruption'
+2018-09-20T11:39:50.739+00:00 axis-accc8e2da5e5 [ WARNING ] disks[687]: disk.c : Disk disruption detection status changed for NetworkShare. Status = 'disruption'
+2018-09-20T11:39:53.389+00:00 axis-accc8e2da5e5 [ WARNING ] systemd[1]: upnp.service: State 'stop-sigterm' timed out. Killing.
+2018-09-20T11:39:53.466+00:00 axis-accc8e2da5e5 [ WARNING ] systemd[1]: upnp.service: Failed with result 'signal'.
+2018-09-20T11:54:37.369+00:00 axis-accc8e2da5e5 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-20T11:54:37.437+00:00 axis-accc8e2da5e5 [ WARNING ] test: sdk_format only to be used with IMAGE_UNCOMPRESSED.
+2018-09-20T11:55:20.345+00:00 axis-accc8e2da5e5 [ WARNING ] test: sdk_format only to be used with IMAGE_UNCOMPRESSED.
+2018-09-20T11:55:20.385+00:00 axis-accc8e2da5e5 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-20T12:21:09.031+00:00 axis-accc8e2da5e5 [ WARNING ] test: sdk_format only to be used with IMAGE_UNCOMPRESSED.
+2018-09-20T12:21:09.119+00:00 axis-accc8e2da5e5 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-20T12:22:34.840+00:00 axis-accc8e2da5e5 [ WARNING ] test: sdk_format only to be used with IMAGE_UNCOMPRESSED.
+2018-09-20T12:22:34.861+00:00 axis-accc8e2da5e5 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-20T12:49:33.444+00:00 axis-accc8e2da5e5 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-20T12:52:33.724+00:00 axis-accc8e2da5e5 [ WARNING ] monolith[295]: (monolith) 0.10-style raw video caps are being created. Should be video/x-raw,format=(string).. now.
+2018-09-20T12:52:42.370+00:00 axis-accc8e2da5e5 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-20T12:56:46.002+00:00 axis-accc8e2da5e5 [ WARNING ] monolith[295]: (monolith) 0.10-style raw video caps are being created. Should be video/x-raw,format=(string).. now.
+2018-09-20T12:57:43.832+00:00 axis-accc8e2da5e5 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-20T12:57:56.098+00:00 axis-accc8e2da5e5 [ WARNING ] monolith[295]: message repeated 2 times: [ (monolith) 0.10-style raw video caps are being created. Should be video/x-raw,format=(string).. now.]
+2018-09-20T12:59:18.240+00:00 axis-accc8e2da5e5 [ WARNING ] monolith[295]: (monolith) 0.10-style raw video caps are being created. Should be video/x-raw,format=(string).. now.
+2018-09-20T12:59:35.542+00:00 axis-accc8e2da5e5 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-20T13:01:40.892+00:00 axis-accc8e2da5e5 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-20T13:43:43.601+00:00 axis-accc8e2da5e5 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-20T13:44:06.212+00:00 axis-accc8e2da5e5 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-20T13:46:27.812+00:00 axis-accc8e2da5e5 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-20T14:19:23.530+00:00 axis-accc8e2da5e5 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-20T14:19:52.271+00:00 axis-accc8e2da5e5 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-20T14:29:29.302+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:29:37.287+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:29:37.287+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:29:37.290+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 3 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:29:37.348+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:29:38.305+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:29:43.394+00:00 axis-accc8e2da5e5 [ INFO    ] test: Handler!
+2018-09-20T14:29:44.888+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:29:45.834+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:29:48.543+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:30:36.715+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:30:36.724+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 18 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:30:36.727+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:30:36.792+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:30:39.942+00:00 axis-accc8e2da5e5 [ INFO    ] test: Handler!
+2018-09-20T14:30:40.952+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:30:41.161+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:30:43.579+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:31:00.187+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:31:00.188+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:31:00.189+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 2 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:31:00.265+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:31:06.486+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:31:06.994+00:00 axis-accc8e2da5e5 [ INFO    ] test: Handler!
+2018-09-20T14:31:07.993+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:31:09.878+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:31:10.283+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:31:10.287+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:31:10.384+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:31:11.742+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:31:17.968+00:00 axis-accc8e2da5e5 [ INFO    ] test: Handler!
+2018-09-20T14:31:17.969+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 6 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:31:20.649+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:31:25.938+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:32:26.230+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 103 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:33:27.670+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 115 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:34:28.828+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 103 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:34:36.195+00:00 axis-accc8e2da5e5 [ INFO    ] test: Handler!
+2018-09-20T14:34:36.197+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 5 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:34:37.458+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:34:43.893+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:35:19.268+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:35:19.269+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 30 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:35:19.278+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:35:19.346+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:35:19.664+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:36:20.403+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 55 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:36:37.567+00:00 axis-accc8e2da5e5 [ INFO    ] test: Handler!
+2018-09-20T14:36:37.569+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 28 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:36:39.794+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:36:41.326+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:36:58.268+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:36:58.270+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 14 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:36:58.273+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:36:58.369+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:37:00.079+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:37:05.865+00:00 axis-accc8e2da5e5 [ INFO    ] test: Handler!
+2018-09-20T14:37:05.866+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 6 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:37:06.101+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:37:06.547+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:37:07.018+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:37:08.303+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:37:15.265+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:37:15.266+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 2 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:37:15.267+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:37:15.330+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:37:15.575+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:37:18.128+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:37:23.537+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:37:23.537+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:37:23.608+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:37:24.851+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:37:28.323+00:00 axis-accc8e2da5e5 [ INFO    ] test: Handler!
+2018-09-20T14:37:28.325+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 2 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:37:32.332+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:37:33.281+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:37:40.265+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:37:40.270+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:37:40.372+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:37:40.786+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:38:06.129+00:00 axis-accc8e2da5e5 [ INFO    ] test: Handler!
+2018-09-20T14:38:06.131+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 17 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:38:06.981+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:38:21.942+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:38:24.266+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:38:24.266+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:38:24.269+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 2 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:38:24.367+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:38:24.562+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:39:26.316+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 62 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:39:26.993+00:00 axis-accc8e2da5e5 [ INFO    ] test: Handler!
+2018-09-20T14:39:27.543+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:39:28.101+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:39:29.273+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:39:33.265+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:39:33.266+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:39:33.268+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 14 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:39:33.364+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:39:34.199+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:39:37.558+00:00 axis-accc8e2da5e5 [ INFO    ] test: Handler!
+2018-09-20T14:39:37.561+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 5 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:39:38.161+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:39:38.260+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:39:39.279+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:39:52.265+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:39:52.265+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:39:52.267+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 20 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:39:52.380+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:39:54.097+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:40:55.157+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 76 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:41:57.869+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 27 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:42:41.855+00:00 axis-accc8e2da5e5 [ INFO    ] test: Handler!
+2018-09-20T14:42:41.856+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 27 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:42:43.253+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:42:44.287+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:42:51.902+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:42:51.902+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:42:51.904+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 9 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:42:51.993+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:42:52.850+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:42:54.162+00:00 axis-accc8e2da5e5 [ INFO    ] test: Handler!
+2018-09-20T14:42:54.508+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:42:57.037+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:42:57.039+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 4 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:42:57.072+00:00 axis-accc8e2da5e5 [ INFO    ] kernel: potentially unexpected fatal signal 11.
+2018-09-20T14:42:58.987+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:43:31.335+00:00 axis-accc8e2da5e5 [ INFO    ] test: Handler!
+2018-09-20T14:43:31.336+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 31 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:43:32.293+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:43:33.356+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:43:45.248+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:43:45.250+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 4 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:43:45.257+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:43:45.278+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:43:45.356+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:43:45.390+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:43:52.051+00:00 axis-accc8e2da5e5 [ INFO    ] test: Handler!
+2018-09-20T14:43:52.053+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 8 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:43:52.556+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:43:52.846+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:43:54.928+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:43:58.255+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:43:58.256+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 4 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:43:58.261+00:00 axis-accc8e2da5e5 [ INFO    ] test: SENDING MESSAGE!!
+2018-09-20T14:43:58.352+00:00 axis-accc8e2da5e5 [ INFO    ] test: Client is disconnected
+2018-09-20T14:43:58.641+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:44:11.574+00:00 axis-accc8e2da5e5 [ INFO    ] upload.cgi: Uploaded '/tmp/test_1_0_mipsisa32r2el.eap' size:36588
+2018-09-20T14:44:11.576+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 25 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:44:11.791+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:44:12.033+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:44:12.126+00:00 axis-accc8e2da5e5 [ INFO    ] upload.cgi: calling: /etc/init.d/sdktest stop
+2018-09-20T14:44:12.199+00:00 axis-accc8e2da5e5 [ INFO    ] test[0]: stopping test
+2018-09-20T14:44:12.342+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:44:14.456+00:00 axis-accc8e2da5e5 [ NOTICE  ] dbus[422]: [system] Reloaded configuration
+2018-09-20T14:44:14.465+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:44:14.991+00:00 axis-accc8e2da5e5 [ NOTICE  ] dbus[422]: [system] Reloaded configuration
+2018-09-20T14:44:14.993+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 2 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:44:15.057+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:44:16.541+00:00 axis-accc8e2da5e5 [ NOTICE  ] dbus[422]: [system] Reloaded configuration
+2018-09-20T14:44:16.542+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: message repeated 2 times: [ Action rule "A2" is starting action "Overlay Text"]
+2018-09-20T14:44:16.655+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:44:16.665+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
+2018-09-20T14:44:16.721+00:00 axis-accc8e2da5e5 [ INFO    ] upload.cgi: Package /tmp/test_1_0_mipsisa32r2el.eap installation OK
+2018-09-20T14:44:16.747+00:00 axis-accc8e2da5e5 [ NOTICE  ] actionengined[972]: Action rule "A2" is starting action "Overlay Text"
