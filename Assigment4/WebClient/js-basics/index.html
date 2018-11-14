@@ -1,0 +1,57 @@
+<html>
+
+<head>
+
+  <style>
+    .button {
+        background-color: #4CAF50;
+        position:absolute;
+        top:10px;
+        left:600px;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        font-size: 16px;
+        z-index:55;
+    }
+    #From { 
+      position:absolute;
+        top:20px;
+        left:100px;
+}
+     #To { 
+      position:absolute;
+        top:20px;
+        left:350px;
+}
+  </style>
+  <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript" src="http.js"></script>
+  <script type="text/javascript" src="chart.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', { packages: ['corechart', 'bar'] });
+    google.charts.setOnLoadCallback(drawBasic);
+  </script>
+
+</head>
+
+<body>
+  <form>
+    <div id="1">From: <input type="datetime-local" id="From"></div>
+    <div id="2">To: <input type="datetime-local" id="To"></div>
+    <button class="button" onclick=" functionGet();  drawBasic(); SellectDate();return false;">Show Results</button>
+  </form>
+  <p id="demo" style="position:relative; top:20px">HELLO</p>
+  <div id="chart_div" style="position:relative;top:10px; left:180px; width:650px; height:400px; z-index:50"></div>
+
+  <body onload="onLoadFunctions();">
+  </body>
+
+</html>
