@@ -1,0 +1,37 @@
+
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Date;
+import java.util.StringTokenizer;
+
+
+public class JavaHTTPServer{
+
+    static final File ROOT = new File(".");
+
+    static final int PORT = 8888;
+  
+
+    public static void main(String[] args) {
+        try {
+            ServerSocket serverConnect = new ServerSocket(PORT);
+            System.out.println("Server started, Listening on port nbr : " + PORT);
+
+            
+            while (true) {
+                WebThread wThread = new WebThread(serverConnect.accept());
+
+               
+                System.out.println("Connecton opened. time/date: " + new Date());
+                
+                Thread thread = new Thread(wThread);
+                thread.start();
+            }
+
+        } catch (IOException e) {
+            System.err.println("Server Connection error : " + e.getMessage());
+        }
+    }
+
+}
