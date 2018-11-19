@@ -18,7 +18,7 @@ public class RSA {
 	 */
 	public RSA() {
 
-		ArrayList<Integer> primes = getPrime(100, 200); // Get primes
+		ArrayList<Integer> primes = getPrime(60, 120); // Get primes
 		Random random = new Random();
 		int test = 123;
 		do {

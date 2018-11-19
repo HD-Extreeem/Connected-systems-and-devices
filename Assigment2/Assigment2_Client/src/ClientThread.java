@@ -27,7 +27,6 @@ public class ClientThread implements Runnable {
 	private BufferedInputStream stream;
 	private int length = 40000;
 	private byte[] imgBuf = new byte[length];
-	private boolean isStrNull = false;
 	private String msg;
 
 	/**
@@ -56,56 +55,40 @@ public class ClientThread implements Runnable {
 			controller.sendKey(); // Send RSA public key to the server
 			System.out.println("innan");
 			msg = bufferedReader.readLine().trim(); //Receive XoR key
-			System.out.println("eceived XoR key is : "+msg);
+			System.out.println("received XoR key encrypted is : " + msg);
 			controller.setKey(msg); // Save XoR key
-			System.out.println("efter");
-			System.out.println("refreshed input");
 			msg = bufferedReader.readLine().trim(); // read the message
 			System.out.println("reading done");
 			System.out.println(msg); // (available resolutions)
 			in = clientSocket.getInputStream();
 			controller.connected(controller.decryptXOR(msg)); // Decrypt
-																// available
-																// resolutions
+			
 			stream = new BufferedInputStream(in);
+			
 		} catch (Exception e) {
 			System.out.println(e.toString());
 			controller.error("Access refused"); // inform the controller about
-												// the error
+			// the error
 		}
 
 		while (isRunning) {
 
 			if (clientSocket != null && clientSocket.isConnected()) { // check
-																		// if we
-																		// are
-																		// still
-																		// connected
-																		// to
-																		// the
-																		// server
+				// if we are still connected to the server
 				try {
 
-					bufferedReader = new BufferedReader(new InputStreamReader(
-							clientSocket.getInputStream()));
-					msg = controller.decryptXOR(bufferedReader.readLine()); // read
-																			// the
-																			// size
-																			// of
-																			// next
-				
-					in = clientSocket.getInputStream();
-					stream = new BufferedInputStream(in);
-					System.out.print("Length : ");
-					System.out.println(msg);
+					msg = controller.decryptXOR(bufferedReader.readLine().trim()); // read
+					/*the size of next*/
+					System.out.println("Length : " + msg);
+					
 					if (isNumber(msg) & msg.length() > 2) { // check the size of
-															// image
+						// image
 						length = Integer.parseInt(msg);
 						imgBuf = new byte[length];
 					}
 
 					for (int read = 0; read < length;) { // read until the byte
-															// array is filled
+						// array is filled
 						read += stream.read(imgBuf, read, imgBuf.length - read);
 					}
 					imgBuf = controller.decryptImage(imgBuf); // Decrypt data of received image
