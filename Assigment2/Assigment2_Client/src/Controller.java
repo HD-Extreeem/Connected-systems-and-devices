@@ -162,6 +162,7 @@ public class Controller {
 		for (int i = 0; i < message_length; i++) {
 			sb.append((char) (msg.charAt(i) ^ (XoR.charAt(i % key_length) - 48)));
 		}
+		//System.out.println("Got msg: "+sb.toString());
 		return (sb.toString());
 	}
 
