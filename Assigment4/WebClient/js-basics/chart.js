@@ -7,32 +7,38 @@ var days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 
 function setObject() {
     mainObj = getObject();
+    mainObj = JSON.parse(mainObj);
     if (mainObj != null) {
-        isDay = checkIfDay(mainObj);
-        var x;
-        if (isDay) {
-            for (i in mainObj.DateTime) {
-                x = mainObj.DateTime[i].Time.split(":");
-                x = parseInt(x[0]);
-                hours[x] = hours[x] + 1;
-                console.log(x);
+        console.log("NOT NULLL");
+        if (mainObj.DateTime.length > 0) {
+            isDay = checkIfDay(mainObj);
+            var x;
+            if (isDay) {
+                for (i in mainObj.DateTime) {
+                    x = mainObj.DateTime[i].Time.split(":");
+                    x = parseInt(x[0]);
+                    hours[x] = hours[x] + 1;
+                    console.log(x);
+                }
             }
-        }
-        else {
-            for (i in mainObj.DateTime) {
-                x = mainObj.DateTime[i].Date.split("-");
-                x = parseInt(x[2]);
-                days[x] = days[x] + 1;
-                console.log(x);
+            else {
+                for (i in mainObj.DateTime) {
+                    x = mainObj.DateTime[i].Date.split("-");
+                    x = parseInt(x[2]);
+                    days[x] = days[x] + 1;
+                    console.log(x);
+                }
             }
         }
     }
+
 }
 
 
 function drawBasic() {
-    var data = new google.visualization.DataTable();
+
     setObject();
+    var data = new google.visualization.DataTable();
     if (isDay) {
         data.addColumn('timeofday', 'Time of Day');
         data.addColumn('number', 'Motion');
@@ -109,7 +115,12 @@ function drawBasic() {
 }
 
 function checkIfDay(obj) {
+
+
+    console.log("PARSED");
+    console.log(obj);
     var index = obj.DateTime.length;
+
     if ((obj.DateTime[0].Date) == (obj.DateTime[index - 1].Date)) {
         console.log("Dayyy");
         return true;

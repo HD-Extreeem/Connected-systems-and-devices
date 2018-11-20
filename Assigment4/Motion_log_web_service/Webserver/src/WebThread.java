@@ -243,7 +243,7 @@ public class WebThread implements Runnable {
 				}
 				
 			}
-			jObj.put("Date&Time", jArr); 
+			jObj.put("DateTime", jArr); 
 			System.out.println(jObj.toString());
 			reader.close();
 
