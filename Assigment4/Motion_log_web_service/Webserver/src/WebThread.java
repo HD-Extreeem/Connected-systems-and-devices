@@ -34,6 +34,7 @@ public class WebThread implements Runnable {
 	
 	public WebThread(Socket socket){
 		this.socket = socket;
+		System.out.println("X2");
 	}
 	
 	/*
@@ -42,7 +43,7 @@ public class WebThread implements Runnable {
 	 */
 	@Override
 	public void run() {
-
+		System.out.println("X3");
 		BufferedReader input = null;
 		PrintWriter output = null;
 		BufferedOutputStream dataOutput = null;
@@ -50,24 +51,25 @@ public class WebThread implements Runnable {
 		String str,method;
 		StringTokenizer	parse;
 		try {
+			System.out.println("X4");
             // we read characters from the client via input stream on the socket
 			input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
+			System.out.println("X5");
             // we get character output stream to client (for headers)
 			output = new PrintWriter(socket.getOutputStream());
-
+			System.out.println("X6");
             // get binary output stream to client (for requested data)
 			dataOutput = new BufferedOutputStream(socket.getOutputStream());
-
+			System.out.println("X7");
             // Get the type of request and content
 			str = input.readLine();
-
+			System.out.println("X8");
             //Parsing the request to extract the request received
 			parse = new StringTokenizer(str);
-
+			System.out.println("X9");
             // Parse the end to know what request
 			method = parse.nextToken().toUpperCase();
-
+			System.out.println("X10");
             /*// Parse and get the time it was triggered
             String date_time = parse.nextToken("/ ");
             
@@ -87,7 +89,6 @@ public class WebThread implements Runnable {
             	interval = parse.nextToken("/ ");
             	//Operations for building html with the data
             	fromTo = interval.split("&");
-
             	write_html(getInterval(fromTo[0],fromTo[1],fromTo[2],fromTo[3]));
             	fileReq = "get_data.html";
             	//fileReq = "get.html";
@@ -95,7 +96,7 @@ public class WebThread implements Runnable {
             	int fileLength = (int) file.length();
 
             	byte[] fileData = file2Byte(file, fileLength);
-
+            	System.out.println("debug 1");
                 // HTTP Headers to send
             	output.println("HTTP/1.1 200 OK");
             	output.println("Date: " + new Date());
@@ -103,22 +104,18 @@ public class WebThread implements Runnable {
             	output.println("Content-length: " + fileLength);
             	output.println(); 
             	output.flush();
-
+            	System.out.println("debug 2");
             	dataOutput.write(fileData, 0, fileLength);
             	dataOutput.flush();
-
+            	System.out.println("debug 3");
             } else if(method.equals("POST")){
             	// Parse and get the time it was triggered
             	date_time = parse.nextToken("/ ");
-
             	fileReq = "set_data.html";
             	write_file(date_time);
-
             	File file = new File(ROOT, fileReq);
             	int fileLength = (int) file.length();
-
             	byte[] fileData = file2Byte(file, fileLength);
-
                 // HTTP Headers to send
             	output.println("HTTP/1.1 200 OK");
             	output.println("Date: " + new Date());
@@ -126,9 +123,8 @@ public class WebThread implements Runnable {
             	output.println("Content-length: " + fileLength);
             	output.println();
             	output.flush();
-
             	dataOutput.write(fileData, 0, fileLength);
-            	dataOutput.flush();
+         //   	dataOutput.flush();
             }
 
 
@@ -142,7 +138,7 @@ public class WebThread implements Runnable {
         	try {
                 input.close(); 		// close inputstream
                 output.close(); 	// close outputstream
-                dataOutput.close(); // close dataOutput
+               // dataOutput.close(); // close dataOutput
                 socket.close(); 	// close the connection
             } catch (Exception e) {
             	System.err.println("Error, Closing Stream : " + e.getMessage());
