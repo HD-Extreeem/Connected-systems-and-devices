@@ -1,17 +1,15 @@
 
-//var DateTime = { "DateTime": [{ "Date": "2018-11-3", "Time": "23:11:06" }, { "Date": "2018-11-3", "Time": "23:11:06" }, { "Date": "2018-11-4", "Time": "10:11:06" }, { "Date": "2018-11-6", "Time": "10:11:06" }, { "Date": "2018-11-6", "Time": "10:11:06" }, { "Date": "2018-11-6", "Time": "11:11:06" }, { "Date": "2018-11-6", "Time": "12:11:06" }, { "Date": "2018-11-6", "Time": "13:11:06" }, { "Date": "2018-11-6", "Time": "14:11:06" }, { "Date": "2018-11-6", "Time": "15:11:06" }] }
 var DateTime ;
 
-
+/**
+ * This method send a http get request to the web server and gets the motion data.
+ */
 function functionGet() {
-  // fromTo="2018-11-06&14-18-28&2018-11-15&13-27-26";
-fromTo = SellectDate();
+fromTo = SellectDate(); // get the sellected intervall
     const Http = new XMLHttpRequest();
     const url = 'http://localhost:8888/'+fromTo;
- //   const url='https://jsonplaceholder.typicode.com/posts';
     Http.open("GET", url,true);
     Http.send(url);
-  // setRequestHeader(fromTo);
   Http.responseType ="document";
 
     Http.onreadystatechange = function () {
@@ -19,8 +17,6 @@ fromTo = SellectDate();
             var xmlDoc = Http.responseXML;
             console.log(xmlDoc);
             var temp = xmlDoc.getElementsByTagName("body")[0].childNodes[0].nodeValue;
-           // DateTime = new XMLSerializer().serializeToString(temp);
-           // DateTime = new XMLSerializer().serializeToString(datetime);
            DateTime = temp;
            drawBasic();
         }
@@ -29,7 +25,9 @@ fromTo = SellectDate();
     return false;
 }
 
-
+/**
+ * This method converts a js object to a string in json format and returns the string.
+ */
 function getObject() {
     if (DateTime != null) {
         var myObj = JSON.stringify(DateTime);

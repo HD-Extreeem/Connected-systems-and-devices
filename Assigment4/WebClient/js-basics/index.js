@@ -1,4 +1,8 @@
 
+
+/**
+ * This method returns the sellected date and time from datetime pickers and returns sellected interval as a string.
+ */
 function SellectDate() {
     var from = document.getElementById("From").value;
     var to = document.getElementById("To").value;
@@ -9,11 +13,12 @@ function SellectDate() {
     from = from + "-00";
     to = to + "-00";
     document.getElementById("demo").innerHTML = from + "&" + to;
-  //  functionGet((from + "&" + to));
-  return ( from + "&" + to);
+    return ( from + "&" + to);
 }
 
-
+/**
+ * This method calls when the page is refreshing.
+ */
 function onLoadFunctions() {
     var date = new Date();
     var year = date.getFullYear();

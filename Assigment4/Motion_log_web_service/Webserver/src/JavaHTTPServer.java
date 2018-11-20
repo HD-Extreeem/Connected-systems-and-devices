@@ -15,7 +15,6 @@ public class JavaHTTPServer{
 
             
             while (true) {
-            	System.out.println("X1");
                 WebThread wThread = new WebThread(serverConnect.accept());
                 System.out.println("Connecton opened. time/date: " + new Date());
                 Thread thread = new Thread(wThread);

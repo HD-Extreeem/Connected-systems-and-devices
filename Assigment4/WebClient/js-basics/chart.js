@@ -5,16 +5,20 @@ var chart;
 var mainObj;
 var days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
+
+/**
+ * The method retrieves the latest json object that containing motion info and fills the arrays.
+ */
 function setObject() {
-    mainObj = getObject();
+    mainObj = getObject(); // get json object
     mainObj = JSON.parse(mainObj);
     if (mainObj != null) {
         console.log("NOT NULLL");
-        if (mainObj.DateTime.length > 0) {
+        if (mainObj.DateTime.length > 0) { // check if there is motion between given interval
             isDay = checkIfDay(mainObj);
             var x;
             if (isDay) {
-                for (i in mainObj.DateTime) {
+                for (i in mainObj.DateTime) { // fill the date array
                     x = mainObj.DateTime[i].Time.split(":");
                     x = parseInt(x[0]);
                     hours[x] = hours[x] + 1;
@@ -22,7 +26,7 @@ function setObject() {
                 }
             }
             else {
-                for (i in mainObj.DateTime) {
+                for (i in mainObj.DateTime) { // fill the day array
                     x = mainObj.DateTime[i].Date.split("-");
                     x = parseInt(x[2]);
                     days[x] = days[x] + 1;
@@ -34,12 +38,16 @@ function setObject() {
 
 }
 
-
+/**
+ * This method draws a google chart with latest motion data.
+ * If the motion data contains more than one day than draw a chart that shows only days.
+ * If the motion data contains only one day than create a chart that shows only hours.
+ */
 function drawBasic() {
 
     setObject();
     var data = new google.visualization.DataTable();
-    if (isDay) {
+    if (isDay) { // There is more than one day
         data.addColumn('timeofday', 'Time of Day');
         data.addColumn('number', 'Motion');
         data.addRows([
@@ -79,7 +87,7 @@ function drawBasic() {
                 }
             },
             vAxis: {
-                title: 'Number of captured motion'
+                title: 'Number of captured motions'
             }
         };
     }
@@ -114,9 +122,11 @@ function drawBasic() {
     hours = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 }
 
+/**
+ * This method checks if the motion data contains more than one day or not.
+ * @param {*} obj 
+ */
 function checkIfDay(obj) {
-
-
     console.log("PARSED");
     console.log(obj);
     var index = obj.DateTime.length;

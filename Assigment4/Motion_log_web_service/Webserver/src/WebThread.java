@@ -34,7 +34,6 @@ public class WebThread implements Runnable {
 	
 	public WebThread(Socket socket){
 		this.socket = socket;
-		System.out.println("X2");
 	}
 	
 	/*
@@ -43,7 +42,6 @@ public class WebThread implements Runnable {
 	 */
 	@Override
 	public void run() {
-		System.out.println("X3");
 		BufferedReader input = null;
 		PrintWriter output = null;
 		BufferedOutputStream dataOutput = null;
@@ -51,39 +49,19 @@ public class WebThread implements Runnable {
 		String str,method;
 		StringTokenizer	parse;
 		try {
-			System.out.println("X4");
             // we read characters from the client via input stream on the socket
 			input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			System.out.println("X5");
             // we get character output stream to client (for headers)
 			output = new PrintWriter(socket.getOutputStream());
-			System.out.println("X6");
             // get binary output stream to client (for requested data)
 			dataOutput = new BufferedOutputStream(socket.getOutputStream());
-			System.out.println("X7");
             // Get the type of request and content
 			str = input.readLine();
-			System.out.println("X8");
             //Parsing the request to extract the request received
 			parse = new StringTokenizer(str);
-			System.out.println("X9");
             // Parse the end to know what request
 			method = parse.nextToken().toUpperCase();
-			System.out.println("X10");
-            /*// Parse and get the time it was triggered
-            String date_time = parse.nextToken("/ ");
-            
-            // Parses the rest of the requested http received
-            fileReq = parse.nextToken().toLowerCase();*/
-
-            // Check if GET method requested and what request was called
-
-            /*if (fileReq.endsWith("get_data")) {
-                fileReq = "get_data.html";
-            }
-            else if(fileReq.endsWith("set_data")) {
-                fileReq = "set_data.html";
-            }*/
+     
             
             if(method.equals("GET")) {
             	interval = parse.nextToken("/ ");
@@ -232,7 +210,7 @@ public class WebThread implements Runnable {
 						jArr.put(map); 
 
 					} else if(Integer.parseInt(dateLowerReq[2])==Integer.parseInt(dateFile[2]) || Integer.parseInt(dateUpperReq[2])==Integer.parseInt(dateFile[2])){
-						if (Integer.parseInt(timeLowerReq[0])<=Integer.parseInt(timeFile[0]) && Integer.parseInt(timeUpperReq[0])>=Integer.parseInt(timeFile[0])&& Integer.parseInt(timeLowerReq[1])<=Integer.parseInt(timeFile[1]) && Integer.parseInt(timeUpperReq[1])>=Integer.parseInt(timeFile[1])) {
+						if (Integer.parseInt(timeLowerReq[0])<=Integer.parseInt(timeFile[0]) || Integer.parseInt(timeUpperReq[0])>=Integer.parseInt(timeFile[0])&& Integer.parseInt(timeLowerReq[1])<=Integer.parseInt(timeFile[1]) && Integer.parseInt(timeUpperReq[1])>=Integer.parseInt(timeFile[1])) {
 							map = new LinkedHashMap(2); 
 							map.put("Date", dateFile[0]+"-"+dateFile[1]+"-"+dateFile[2]); 
 							map.put("Time", timeFile[0]+":"+timeFile[1]+":"+timeFile[2]); 
