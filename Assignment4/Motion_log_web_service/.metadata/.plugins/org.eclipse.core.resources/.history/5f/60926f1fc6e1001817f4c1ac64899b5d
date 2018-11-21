@@ -1,0 +1,185 @@
+
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Date;
+import java.util.StringTokenizer;
+
+
+public class JavaHTTPServer implements Runnable{
+
+    static final File WEB_ROOT = new File(".");
+
+    static final int PORT = 8888;
+
+    // verbose mode
+    static final boolean verbose = true;
+
+    private int count = 10;
+
+    // Client Connection via Socket Class
+    private Socket socket;
+
+    public JavaHTTPServer(Socket c) {
+        socket = c;
+    }
+
+    public static void main(String[] args) {
+        try {
+            ServerSocket serverConnect = new ServerSocket(PORT);
+            System.out.println("Server started.\nListening for connections on port : " + PORT + " ...\n");
+
+            // we listen until user halts server execution
+            while (true) {
+                JavaHTTPServer myServer = new JavaHTTPServer(serverConnect.accept());
+
+                if (verbose) {
+                    System.out.println("Connecton opened. (" + new Date() + ")");
+                }
+
+                // Creates a thread for each connection
+                Thread thread = new Thread(myServer);
+                thread.start();
+            }
+
+        } catch (IOException e) {
+            System.err.println("Server Connection error : " + e.getMessage());
+        }
+    }
+
+    @Override
+    public void run() {
+        // we manage our particular client connection
+        BufferedReader input = null;
+        PrintWriter output = null;
+        BufferedOutputStream dataOutput = null;
+        String fileRequested = null;
+
+        try {
+            // we read characters from the client via input stream on the socket
+            input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
+            // we get character output stream to client (for headers)
+            output = new PrintWriter(socket.getOutputStream());
+
+            // get binary output stream to client (for requested data)
+            dataOutput = new BufferedOutputStream(socket.getOutputStream());
+
+            // Get the type of request and content
+            String str = input.readLine();
+
+            //Parsing the request to extract the request received
+            StringTokenizer parse = new StringTokenizer(str);
+
+            // Parse the end to know what request
+            String method = parse.nextToken().toUpperCase();
+            String date_time = parse.nextToken("/");
+            // Parses the rest of the requested http received
+            fileRequested = parse.nextToken().toLowerCase();
+
+            // Check if GET method requested and what request was called
+
+            if (fileRequested.endsWith("get_data")) {
+                fileRequested = "get_data.html";
+            }
+            else if(fileRequested.endsWith("set_data")) {
+                fileRequested = "set_data.html";
+            }
+            if(method.equals("GET")) {
+
+                File file = new File(WEB_ROOT, fileRequested);
+                int fileLength = (int) file.length();
+
+                byte[] fileData = readFileData(file, fileLength);
+
+                // HTTP Headers to send
+                output.println("HTTP/1.1 200 OK");
+                output.println("Date: " + new Date());
+                output.println("Count: "+ getCount());
+                output.println("Content-type: " + "text/html");
+                output.println("Content-length: " + fileLength);
+                output.println(); // blank line between headers and content, very important !
+                output.flush(); // flush character output stream buffer
+
+                dataOutput.write(fileData, 0, fileLength);
+                dataOutput.flush();
+
+            } else if(method.equals("POST")){
+                File database = new File("test.txt");
+
+                //Create the file
+                if (database.createNewFile())
+                {
+                    System.out.println("File is created!");
+                } else {
+                    System.out.println("File already exists.");
+                }
+
+                //Write Content
+                FileWriter writer = new FileWriter(database);
+                writer.write(fileRequested);
+                System.out.println(fileRequested);
+                writer.close();
+
+                File file = new File(WEB_ROOT, fileRequested);
+                int fileLength = (int) file.length();
+
+                byte[] fileData = readFileData(file, fileLength);
+
+                // HTTP Headers to send
+               output.println("HTTP/1.1 200 OK");
+                output.println("Date: " + new Date());
+                output.println("Content-type: " + "text/html");
+                output.println("Content-length: " + fileLength);
+               output.println(); // blank line between headers and content, very important !
+               output.flush(); // flush character output stream buffer
+
+                dataOutput.write(fileData, 0, fileLength);
+                dataOutput.flush();
+            }
+
+          
+
+        } catch (FileNotFoundException fnfe) {
+            System.out.println("FAILED FILE NOT FOUND!");
+
+        } catch (IOException ioe) {
+            System.err.println("Server Err : " + ioe);
+        } finally {
+            try {
+                input.close();
+                output.close();
+                dataOutput.close();
+                socket.close(); // we close socket connection
+            } catch (Exception e) {
+                System.err.println("Error, Closing Stream : " + e.getMessage());
+            }
+
+            if (verbose) {
+                System.out.println("Closed connection.\n");
+            }
+        }
+
+    }
+
+    private byte[] readFileData(File file, int fileLength) throws IOException {
+        FileInputStream fileInputStream = null;
+        byte[] fileData = new byte[fileLength];
+
+        try {
+            fileInputStream = new FileInputStream(file);
+            fileInputStream.read(fileData);
+        } finally {
+            if (fileInputStream != null)
+                fileInputStream.close();
+        }
+
+        return fileData;
+    }
+
+    private int getCount(){
+        return count;
+
+    }
+
+}
