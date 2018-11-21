@@ -1,16 +1,14 @@
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.nio.CharBuffer;
-
 import javax.swing.JOptionPane;
 
 /**
  * 
  * @author Yurdaer Dalkic & Hadi Deknache
  * 
- *         This class handles all logical operations etc. connection with
- *         server, closing GUI_Log and opening GUI_Main, changing received
- *         images on the display, closing the connection with the server...
+ *    This class handles all logical operations etc. connection with
+ *    server, closing GUI_Log and opening GUI_Main, changing received
+ *    images on the display, closing the connection with the server...
  *
  */
 public class Controller {
@@ -20,8 +18,6 @@ public class Controller {
 	private String IPadress;
 	private String TCPport;
 	private ClientThread clientThread;
-	private String res;
-	private String[] resolutions = new String[] { "360x360", "560x560", "480x480", "280x280", "2800x2800" };
 
 	/**
 	 * Constructor which starts the GUI_Log in order to allow user type in IP
@@ -47,7 +43,7 @@ public class Controller {
 		if (IPadress.length() == 0 || TCPport.length() == 0) {
 			fail();
 		}
-		//
+		// The IP and TCP port is a valid length and can start 
 		else {
 			// Start a new threat which will handles the communication with the server
 			clientThread = new ClientThread(this, IPadress, TCPport);
@@ -69,7 +65,7 @@ public class Controller {
 	/**
 	 * This method displays a message dialog with received string.
 	 * 
-	 * @param message
+	 * @param message to show in the message dialogue
 	 */
 	public void error(String message) {
 		JOptionPane.showMessageDialog(null, message);
@@ -79,7 +75,7 @@ public class Controller {
 	/**
 	 * This method displays the received image in the GUI_Main.
 	 * 
-	 * @param image
+	 * @param image to update the JPanel with
 	 */
 	public void changeImage(BufferedImage image) {
 		gui_main.changePath(image);
@@ -117,22 +113,15 @@ public class Controller {
 
 	}
 
-	/**
-	 * This method is not currently used.
-	 */
-	public void rutin() {
-		clientThread.send(res);
-	}
 
 	/**
 	 * This method sends the chosen resolution and frame rate to the server.
 	 * 
-	 * @param selectedItem
-	 * @param frameRate
+	 * @param selectedItem that was chosen as resolution 
+	 * @param frameRate	that was chosen for the image
 	 */
 	public void update(String selectedItem, String frameRate) {
 		String message = "resolution=" + selectedItem + "&fps=" + frameRate;
-		res = message;
 		clientThread.send(message);
 	}
 

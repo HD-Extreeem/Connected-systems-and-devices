@@ -17,7 +17,6 @@ class GUI_Main implements ActionListener {
 	private Controller controller;
 	private JPanel background = new Picture2("src/files/background1.jpg");
 	private JFrame frame = new JFrame();
-	private String[] resolution;
 	private JComboBox<String> resolutionsBox;
 	private JTabbedPane tabbed = new JTabbedPane();
 	private JPanel image = new Picture2("src/files/icon.png");
@@ -34,7 +33,6 @@ class GUI_Main implements ActionListener {
 	 */
 	public GUI_Main(Controller controller, String[] resolution) {
 		this.controller = controller;
-		this.resolution = resolution;
 		fpsLabel.setForeground(Color.WHITE);
 		fpsLabel.setFont(new Font("Serif", Font.BOLD, 17));
 		fpsLabel.setText("Frame Rate");

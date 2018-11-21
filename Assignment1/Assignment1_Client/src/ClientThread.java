@@ -1,12 +1,7 @@
 import javax.imageio.ImageIO;
-import javax.imageio.stream.ImageInputStream;
-import javax.swing.*;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.net.InetAddress;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 /**
  * @author Yurdaer Dalkic & Hadi Deknache
@@ -27,7 +22,6 @@ public class ClientThread implements Runnable {
 	private BufferedInputStream stream;
 	private int length = 40000;
 	private byte[] imgBuf = new byte[length];
-	private boolean isStrNull = false;
 	private String msg;
 
 	/**
@@ -57,6 +51,7 @@ public class ClientThread implements Runnable {
 			System.out.println(msg);
 			controller.connected(msg); // send receives message to the controller
 			stream = new BufferedInputStream(in);
+			
 		} catch (Exception e) {
 			controller.error("Access refused"); // inform the controller about the error
 		}
@@ -66,21 +61,22 @@ public class ClientThread implements Runnable {
 			if (clientSocket != null && clientSocket.isConnected()) { // check if we are still connected to the server
 				try {
 
-					bufferedReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 					msg = bufferedReader.readLine(); // read the size of next image
-					in = clientSocket.getInputStream();
-					stream = new BufferedInputStream(in);
+
+					//Checks if the data that is received is the image size or image
 					if (isNumber(msg) & msg.length() > 2) { // check the size of image
 						length = Integer.parseInt(msg);
 						System.out.println(msg);
 						imgBuf = new byte[length];
 					}
-
+					//Reads the image
 					for (int read = 0; read < length;) { // read until the byte array is filled
 						read += stream.read(imgBuf, read, imgBuf.length - read);
 					}
+					//Converts the image to a BufferedImage to show on a JPanel
 					img = ImageIO.read(new ByteArrayInputStream(imgBuf));
 
+					//Checks if the image might be null, preventing exception
 					if (img != null) {
 						controller.changeImage(img);
 						img = null;
@@ -91,8 +87,10 @@ public class ClientThread implements Runnable {
 					e.printStackTrace();
 				}
 
-			} else {
-				stop();
+			} 
+			//If client not connected then we close socket and stop
+			else {
+				close();
 				controller.close();
 				isRunning = false;
 			}
@@ -130,22 +128,6 @@ public class ClientThread implements Runnable {
 	/**
 	 * Close the socket and print stream
 	 */
-	public void stop() {
-		if (!clientSocket.isConnected()) {
-			printStream.close();
-			try {
-				clientSocket.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			System.out.println("Closing! bye :(");
-		}
-
-	}
-
-	/**
-	 * Close the socket
-	 */
 	public void close() {
 		isRunning = false;
 		try {
@@ -154,6 +136,7 @@ public class ClientThread implements Runnable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		System.out.println("Closing! bye :(");
 
 	}
 
