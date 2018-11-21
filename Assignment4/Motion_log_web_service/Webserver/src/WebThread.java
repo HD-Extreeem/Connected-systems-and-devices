@@ -32,6 +32,9 @@ public class WebThread implements Runnable {
 	private String date_time,interval;
 	private String fromTo[];
 	
+	/*
+	 *The constructor that saves the client that was connected to be able to send response back
+	 */
 	public WebThread(Socket socket){
 		this.socket = socket;
 	}
@@ -40,53 +43,58 @@ public class WebThread implements Runnable {
 	 * Runnable used for the client http request
 	 * @see java.lang.Runnable#run()
 	 */
+
 	@Override
 	public void run() {
 		BufferedReader input = null;
 		PrintWriter output = null;
-		BufferedOutputStream dataOutput = null;
-		String fileReq = null;
-		String str,method;
-		StringTokenizer	parse;
+		BufferedOutputStream dataOutput = null;	// Used for writing back to the client the message
+		String fileReq = null;					// Used for specifying the request type to answer with back to the client
+		String str,method;						
+		StringTokenizer	parse;					// Used for parsing the http request that was got from the client
+
 		try {
-            // we read characters from the client via input stream on the socket
-			input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            // we get character output stream to client (for headers)
-			output = new PrintWriter(socket.getOutputStream());
-            // get binary output stream to client (for requested data)
-			dataOutput = new BufferedOutputStream(socket.getOutputStream());
-            // Get the type of request and content
-			str = input.readLine();
-            //Parsing the request to extract the request received
-			parse = new StringTokenizer(str);
-            // Parse the end to know what request
-			method = parse.nextToken().toUpperCase();
+            
+			input = new BufferedReader(new InputStreamReader(socket.getInputStream())); // we read characters from the client via input stream on the socket
+            
+			output = new PrintWriter(socket.getOutputStream()); 						// we get character output stream to client (for headers)
+            
+			dataOutput = new BufferedOutputStream(socket.getOutputStream());			// get binary output stream to client (for requested data)
+            
+			str = input.readLine();														// Get the type of request and content
+            
+			parse = new StringTokenizer(str);											//Parsing the request to extract the request received
+            
+			method = parse.nextToken().toUpperCase();									// Parse the end to know what request
      
             
             if(method.equals("GET")) {
-            	interval = parse.nextToken("/ ");
-            	//Operations for building html with the data
-            	fromTo = interval.split("&");
-            	write_html(getInterval(fromTo[0],fromTo[1],fromTo[2],fromTo[3]));
-            	fileReq = "get_data.html";
-            	//fileReq = "get.html";
-            	File file = new File(ROOT, fileReq);
-            	int fileLength = (int) file.length();
 
-            	byte[] fileData = file2Byte(file, fileLength);
-            	System.out.println("debug 1");
-                // HTTP Headers to send
+            	interval = parse.nextToken("/ ");									//Gets the sent interval in http by parsing it
+            	fromTo = interval.split("&");										//Splits the intervals in two (from and to)
+            	write_html(getInterval(fromTo[0],fromTo[1],fromTo[2],fromTo[3]));	//Operation for filtering and getting the data from the database
+            																		//Writes then after to html to send to the client
+            	fileReq = "get_data.html";											//Specify the html file to send
+
+            	File file = new File(ROOT, fileReq);								//Create a file of it
+            	int fileLength = (int) file.length();								//Get the length of the file
+
+            	byte[] fileData = file2Byte(file, fileLength);						//Create a byte array for sending it
+
+                // HTTP Headers to send to the client
             	output.println("HTTP/1.1 200 OK");
             	output.println("Date: " + new Date());
             	output.println("Content-type: " + "text/html");
             	output.println("Content-length: " + fileLength);
             	output.println(); 
             	output.flush();
-            	System.out.println("debug 2");
+            	
+            	//Write the html file afterwards
             	dataOutput.write(fileData, 0, fileLength);
             	dataOutput.flush();
-            	System.out.println("debug 3");
+
             } else if(method.equals("POST")){
+
             	// Parse and get the time it was triggered
             	date_time = parse.nextToken("/ ");
             	fileReq = "set_data.html";
@@ -94,7 +102,8 @@ public class WebThread implements Runnable {
             	File file = new File(ROOT, fileReq);
             	int fileLength = (int) file.length();
             	byte[] fileData = file2Byte(file, fileLength);
-                // HTTP Headers to send
+
+                // HTTP Headers to send to the client
             	output.println("HTTP/1.1 200 OK");
             	output.println("Date: " + new Date());
             	output.println("Content-type: " + "text/html");
@@ -102,7 +111,7 @@ public class WebThread implements Runnable {
             	output.println();
             	output.flush();
             	dataOutput.write(fileData, 0, fileLength);
-         //   	dataOutput.flush();
+            	dataOutput.flush();
             }
 
 
@@ -116,20 +125,19 @@ public class WebThread implements Runnable {
         	try {
                 input.close(); 		// close inputstream
                 output.close(); 	// close outputstream
-               // dataOutput.close(); // close dataOutput
+                dataOutput.close(); // close dataOutput
                 socket.close(); 	// close the connection
             } catch (Exception e) {
             	System.err.println("Error, Closing Stream : " + e.getMessage());
             }
-
-            
             System.out.println("Closed connection.\n");
             
         }
 
     }
+
 	/**
-	 * Method for converting the html file to byte and send it
+	 * Method for converting the html file to byte to be able to send to client
 	 * @param f the HTML file to answer with
 	 * @param length size of the HTML file
 	 * @return html file as a byte array
@@ -150,10 +158,15 @@ public class WebThread implements Runnable {
 		return fileData;
 	}
 
+	/**
+	 * This method is used for writing the received data from the acap application
+	 * When a motion detection was detected
+	 * @param data the data to write to the body of the html
+	 */
 	private void write_file(String data){
 		File database = new File("test.txt");
 		try {
-        //Create the file
+        	//Create the file
 			if (database.createNewFile())
 			{
 				System.out.println("File is created!");
@@ -161,9 +174,8 @@ public class WebThread implements Runnable {
 				System.out.println("File already exists.");
 			}
 
-        //Write Content
+        	//Write Content
 			FileWriter writer = new FileWriter(database,true);
-
 			writer.write(data+"\n");
 			System.out.println(data+"\n");
 			writer.close();
@@ -174,56 +186,84 @@ public class WebThread implements Runnable {
 
 	}
 
+	/**
+	 * This method is used for filtering the database data, which was received by the acap application
+	 * Filters the data and by checking between the intervals received by javaScript application
+	 * @param lowerDate the lower interval date
+	 * @param lowerTime the lower interval time 
+	 * @param upperDate the upper interval date
+	 * @param upperTime the upper interval time
+	 * @return the filtered data between the two intervals as a string
+	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private String getInterval(String lowerDate, String lowerTime, String upperDate, String upperTime) throws FileNotFoundException{
-		String line;
-		FileReader fr = new FileReader("test.txt");
-		BufferedReader reader = new BufferedReader(fr);
+		String line;									//Variable used for reading the txt file each row
+		FileReader fr = new FileReader("test.txt");		//Filreader used for reading the text.txt file containing the data stored
+		BufferedReader reader = new BufferedReader(fr);	//BufferedReader used for reading the file
 		
-		String[] dateUpperReq = upperDate.split("-");
-		String[] dateLowerReq = lowerDate.split("-");
+		String[] dateUpperReq = upperDate.split("-");	//Parsing the dateUpper by year, month and day
+		String[] dateLowerReq = lowerDate.split("-");	//Parsing the dateLower by year, month and day
 
-		String[] timeUpperReq = upperTime.split("-");
-		String[] timeLowerReq = lowerTime.split("-");
+		String[] timeUpperReq = upperTime.split("-");	//Parsing the timeUpper by hour, minutes and seconds
+		String[] timeLowerReq = lowerTime.split("-");	//Parsing the timeLower by hour, minutes and seconds
 
-		String[] dateTimeFile, dateFile, timeFile;
+		String[] dateTimeFile, dateFile, timeFile;		//Variables used for holding the current read line in the txt file
 
-		JSONObject jObj = new JSONObject();
-		JSONArray jArr = new JSONArray(); 
+		JSONObject jObj = new JSONObject();				//Create a json object instance to store the filtered date&time
+		JSONArray jArr = new JSONArray(); 				//Create a json array for storing each line
 
-    	//int i=0;
-		Map map= new LinkedHashMap(60); 
+		Map map = new LinkedHashMap(60); 				//LinkedHashMap used for storing the values and add to the json array
+		boolean put = false;
+
 		try {
+			/*Continues to read the file until */
 			while((line=reader.readLine())!=null){
 
-				dateTimeFile = line.split("&");
+				dateTimeFile = line.split("&");			//Split/seperate the date and time from each other
+				dateFile = dateTimeFile[0].split("-");	//Split the date to year, month and day
+				timeFile = dateTimeFile[1].split("-");	//Split the time to hour, minutes and seconds
 
-				dateFile = dateTimeFile[0].split("-");
-				timeFile = dateTimeFile[1].split("-");
-				//Problems here need to be solved- What if other day but time is different
-				if(Integer.parseInt(dateLowerReq[0])<=Integer.parseInt(dateFile[0]) && Integer.parseInt(dateUpperReq[0])>=Integer.parseInt(dateFile[0]) && Integer.parseInt(dateLowerReq[1])<=Integer.parseInt(dateFile[1]) && Integer.parseInt(dateUpperReq[1])>=Integer.parseInt(dateFile[1])&& Integer.parseInt(dateLowerReq[2])<=Integer.parseInt(dateFile[2]) && Integer.parseInt(dateUpperReq[2])>=Integer.parseInt(dateFile[2])){
+				/*We check the line fetched from the txt file if the date is between these intervals requested*/
+				if(Integer.parseInt(dateLowerReq[0])<=Integer.parseInt(dateFile[0]) && Integer.parseInt(dateUpperReq[0])>=Integer.parseInt(dateFile[0]) && Integer.parseInt(dateLowerReq[1])<=Integer.parseInt(dateFile[1]) && Integer.parseInt(dateUpperReq[1])>=Integer.parseInt(dateFile[1])){
+					/*Check if it is between the two intervals but not on the same day, then we don not have to bother about the time*/
 					if (Integer.parseInt(dateLowerReq[2])<Integer.parseInt(dateFile[2]) && Integer.parseInt(dateUpperReq[2])>Integer.parseInt(dateFile[2])){
 						/*If we want to sort the hours it can be done here, this let us use less code on the java script side*/
-						map = new LinkedHashMap(2); 
-						map.put("Date", dateFile[0]+"-"+dateFile[1]+"-"+dateFile[2]); 
-						map.put("Time", timeFile[0]+":"+timeFile[1]+":"+timeFile[2]); 
-						jArr.put(map); 
+						put = true;
 
-					} else if(Integer.parseInt(dateLowerReq[2])==Integer.parseInt(dateFile[2]) || Integer.parseInt(dateUpperReq[2])==Integer.parseInt(dateFile[2])){
-						if (Integer.parseInt(timeLowerReq[0])<=Integer.parseInt(timeFile[0]) || Integer.parseInt(timeUpperReq[0])>=Integer.parseInt(timeFile[0])&& Integer.parseInt(timeLowerReq[1])<=Integer.parseInt(timeFile[1]) && Integer.parseInt(timeUpperReq[1])>=Integer.parseInt(timeFile[1])) {
-							map = new LinkedHashMap(2); 
-							map.put("Date", dateFile[0]+"-"+dateFile[1]+"-"+dateFile[2]); 
-							map.put("Time", timeFile[0]+":"+timeFile[1]+":"+timeFile[2]); 
-							jArr.put(map); 
-
-						}
 					} 
+					/*If the day was the same as the line, then we have to check for the time also*/
+					else if(Integer.parseInt(dateLowerReq[2])==Integer.parseInt(dateFile[2]) || Integer.parseInt(dateUpperReq[2])==Integer.parseInt(dateFile[2])){
+						/*We check if the hour are between the two intervals*/
+						//Notation for future bugs || -> && in first check
+						if (Integer.parseInt(timeLowerReq[0])<Integer.parseInt(timeFile[0]) && Integer.parseInt(timeUpperReq[0])>Integer.parseInt(timeFile[0])){
+							put = true;
+						}
+						/*Else it might be that the hour is the same or outside the interval, we check if it is on the same hour*/
+						else if (Integer.parseInt(timeLowerReq[0])==Integer.parseInt(timeFile[0]) || Integer.parseInt(timeUpperReq[0])==Integer.parseInt(timeFile[0])) {
+							/*We check if the minutes are between the interval for same day and hour */
+							if (Integer.parseInt(timeLowerReq[1])<=Integer.parseInt(timeFile[1]) && Integer.parseInt(timeUpperReq[1])>=Integer.parseInt(timeFile[1])) {
+								put = true;
+							}
+						}	
+					} 
+				} 
+
+				else{
+					break;
+				}
+
+				if (put) {
+					map = new LinkedHashMap(2); 									//Create a new instance of the LinkedHashMap to add to the jsonarray
+					map.put("Date", dateFile[0]+"-"+dateFile[1]+"-"+dateFile[2]); 	//Add the date
+					map.put("Time", timeFile[0]+":"+timeFile[1]+":"+timeFile[2]); 	//Add the time
+					jArr.put(map); 													//Add the map to the json array
+					put = false;													//reset the boolean to add
 				}
 				
 			}
-			jObj.put("DateTime", jArr); 
-			System.out.println(jObj.toString());
-			reader.close();
+			jObj.put("DateTime", jArr); 			//Add the whole json array to the json object
+			System.out.println(jObj.toString());	
+			reader.close();							//Close the reader, the work is done
 
 		} catch (IOException | JSONException e) {
 			e.printStackTrace();
@@ -232,20 +272,22 @@ public class WebThread implements Runnable {
 		return jObj.toString();
 
 	}
-
+	/**
+	 * This method is used for writing the text to a html file
+	 * To be able to send to the client
+	 * @param b the body that will be added to the html file
+	 */
 	@SuppressWarnings("deprecation")
 	private void write_html(String b){
 		File newHtml = null;
 		try {
-			File htmlFile = new File("get_data_templet.html");
-			String htmlStr = FileUtils.readFileToString(htmlFile);
-			String title = "Fetched Data";
-			String body = b;
-			//body = getInterval(from,to);
-			htmlStr = htmlStr.replace("$title", title);
-			htmlStr = htmlStr.replace("$body", body);
-			newHtml = new File("get_data.html");
-			FileUtils.writeStringToFile(newHtml,htmlStr);
+			File htmlFile = new File("get_data_templet.html");		//Get the template html file
+			String htmlStr = FileUtils.readFileToString(htmlFile);	//Read the file to a string
+			String title = "Fetched Data";																	
+			htmlStr = htmlStr.replace("$title", title);				//Replace the title string with the wanted title
+			htmlStr = htmlStr.replace("$body", b);					//Replace the body with the wanted body
+			newHtml = new File("get_data.html");					//declear the newhtml the other file to write to
+			FileUtils.writeStringToFile(newHtml,htmlStr);			//Write the data to the html file to send
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 	
