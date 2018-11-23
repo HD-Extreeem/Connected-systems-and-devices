@@ -233,18 +233,24 @@ public class WebThread implements Runnable {
 					} 
 					/*If the day was the same as the line, then we have to check for the time also*/
 					else if(Integer.parseInt(dateLowerReq[2])==Integer.parseInt(dateFile[2]) || Integer.parseInt(dateUpperReq[2])==Integer.parseInt(dateFile[2])){
-						/*We check if the hour are between the two intervals*/
-						//Notation for future bugs || -> && in first check
+						/*We check if the hour are between the two intervals, then no need to check minutes*/
 						if (Integer.parseInt(timeLowerReq[0])<Integer.parseInt(timeFile[0]) && Integer.parseInt(timeUpperReq[0])>Integer.parseInt(timeFile[0])){
 							put = true;
 						}
-						/*Else it might be that the hour is the same or outside the interval, we check if it is on the same hour*/
-						else if (Integer.parseInt(timeLowerReq[0])==Integer.parseInt(timeFile[0]) || Integer.parseInt(timeUpperReq[0])==Integer.parseInt(timeFile[0])) {
-							/*We check if the minutes are between the interval for same day and hour */
-							if (Integer.parseInt(timeLowerReq[1])<=Integer.parseInt(timeFile[1]) && Integer.parseInt(timeUpperReq[1])>=Integer.parseInt(timeFile[1])) {
+						/*Else it might be that the lower limit hour is the same, we check if it is on the same lower limit hour*/
+						else if (Integer.parseInt(timeLowerReq[0])==Integer.parseInt(timeFile[0])) {
+							/*We check if the limit is lower than the one in the file */
+							if (Integer.parseInt(timeLowerReq[1])<=Integer.parseInt(timeFile[1])) {
 								put = true;
 							}
-						}	
+						}
+						/*Else it might be that the upper limit hour is the same, we check if it is on the same upper limit hour*/
+						else if (Integer.parseInt(timeUpperReq[0])==Integer.parseInt(timeFile[0])){
+							/*We check if the limit is larger than the one in the file*/
+							if (Integer.parseInt(timeUpperReq[1])>=Integer.parseInt(timeFile[1])){
+								put = true;
+							}
+						}
 					} 
 				} 
 

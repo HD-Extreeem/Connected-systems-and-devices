@@ -13,7 +13,7 @@ public class JavaHTTPServer{
     public static void main(String[] args) {
         try {
             //ServerSocket serverConnect = new ServerSocket(8888);
-        	ServerSocket serverConnect = new ServerSocket(8888, 0, InetAddress.getByName("localhost"));
+        	ServerSocket serverConnect = new ServerSocket(8888);
             System.out.println("Server started, Listening on port nbr : " + 8888);
 
             //Loops forever waiting for clients to connect (Javascript client or Acap application)

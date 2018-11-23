@@ -13,7 +13,7 @@
 #include <netdb.h>      /* struct hostent, gethostbyname */
 
 void sub_callback(guint subs, AXEvent *evt, guint *token);
-void *sendReq(char* current_time);
+void *sendReq();
 guint set_up_ax_event_subscription(AXEventHandler *evt_handler, guint token);
 
 /* Callback for the motion event triggered each time there 
@@ -22,7 +22,6 @@ guint set_up_ax_event_subscription(AXEventHandler *evt_handler, guint token);
 void sub_callback(guint subs, AXEvent *evt, guint *token){
 	const AXEventKeyValueSet *k_v_set;
 	gboolean state;
-	time_t now;
 	(void)subs;
 
 	//Extracting the key value set from event
@@ -34,21 +33,9 @@ void sub_callback(guint subs, AXEvent *evt, guint *token){
 	char *msg =  state ? "Triggered high" : "Triggered low";
 	syslog(LOG_INFO,"Motion: %s \n", msg);
 
-    time(&now);                                     //Get the current time
-    char t [30];
-    int h,m,s,d,mon,y;                              //Variables that holds the date&time
-    struct tm *local = localtime(&now);             //Create a struct pointing at the current time&date
-    h = local->tm_hour;                             //Get hour
-    m = local->tm_min;                              //Get minute
-    s = local->tm_sec;                              //Get seconds
-    d = local->tm_mday;                             //Get day
-    mon = local->tm_mon+1;                          //Get month
-    y = local->tm_year+1900;                        //Get year
-    syslog(LOG_INFO,"Hour : %d-%d-%d \n",h,m,s);
-    sprintf(t,"%d-%d-%d&%d-%d-%d",y,mon,d,h,m,s);   //Compose the message to char[] to send
-    syslog(LOG_INFO,"Time is with s: %s \n", t);
-    pthread_t client_thread;                        //Create a thread object
-    pthread_create(&client_thread,NULL,sendReq,t);  //Create the thread and prepare to send the composed time&date
+    
+    	pthread_t client_thread;                        //Create a thread object
+    	pthread_create(&client_thread,NULL,sendReq,NULL);  //Create the thread and prepare to send the composed time&date
 }
 
 
@@ -84,6 +71,7 @@ guint set_up_ax_event_subscription(AXEventHandler *evt_handler, guint token){
 
 int main(void){
 	GMainLoop *m_loop;
+	guint subs;
   	syslog(LOG_INFO, "Starting motion app");
 	AXEventHandler *evt_handler;
 	m_loop = g_main_loop_new(NULL, FALSE);
@@ -91,31 +79,14 @@ int main(void){
 
 	evt_handler = ax_event_handler_new();
 
-    //Bellow is for testing to send to the webserver without the camera motion part
-	/*time(&now);
-    char t [40];
-    int h,m,s,d,mon,y;
-    struct tm *local = localtime(&now);
-    h = local->tm_hour;
-    m = local->tm_min;
-    s = local->tm_sec;
-    d = local->tm_mday;
-    mon = local->tm_mon+1;
-    y = local->tm_year+1900;
-    syslog(LOG_INFO,"Hour : %d-%d-%d \n",h,m,s);
-    sprintf(t,"%d-%d-%d&%d-%d-%d",y,mon,d,h,m,s);
-    //sprintf(t,"%d %d %d",h,m,s);
-    //sprintf(time,"%d-%d-%d",h,m,s);
-    //time = string_replace(time,' ', '-');
-    syslog(LOG_INFO,"Time is with s: %s \n", t);
-    pthread_t client_thread;
-    pthread_create(&client_thread,NULL,sendReq,t);*/
-
-	set_up_ax_event_subscription(evt_handler, &token);
+	subs = set_up_ax_event_subscription(evt_handler, &token);
 	g_main_loop_run(m_loop);
 	
-	ax_event_handler_free(evt_handler);
 	
+	syslog(LOG_INFO,"Done!");
+ 	ax_event_handler_unsubscribe(evt_handler, subs, NULL);
+	ax_event_handler_free(evt_handler);
+	g_main_loop_unref(m_loop);
 
 	return 0;
 }
@@ -124,7 +95,7 @@ int main(void){
  * This method is used for sending the request to the web server
  * Runs on a thread to send async and when finished, the thread closes
  */
-void *sendReq(char* current_time)
+void *sendReq()
 {
     int portno =        8888;
     char *host =        "192.168.20.231";
@@ -133,11 +104,22 @@ void *sendReq(char* current_time)
     struct sockaddr_in serv_addr;
     int sockfd;
     char message[128],response[2048];
-    
+    time_t now;
+
+    time(&now);                                     //Get the current time
+    int h,m,s,d,mon,y;                              //Variables that holds the date&time
+    struct tm *local = localtime(&now);             //Create a struct pointing at the current time&date
+
+    h = local->tm_hour;                             //Get hour
+    m = local->tm_min;                              //Get minute
+    s = local->tm_sec;                              //Get seconds
+    d = local->tm_mday;                             //Get day
+    mon = local->tm_mon+1;                          //Get month
+    y = local->tm_year+1900;                        //Get year
     
     /* fill the http params for request */
-    sprintf(message,"%s",current_time);
-    printf("Request:%s\n",message);
+    sprintf(message,"%d-%d-%d&%d-%d-%d",y,mon,d,h,m,s);
+    syslog(LOG_INFO,"Request:%s\n",message);
     
 
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -159,7 +141,7 @@ void *sendReq(char* current_time)
     
     //Compose the http request and send a post request to the webserver to save the message
     char request[200];
-    sprintf(request, "POST %s/set_data\r\nHTTP/1.0\r\nHOST:%s\r\n", message,"192.168.20.231");
+    sprintf(request, "POST %s/set_data\r\nHTTP/1.1\r\nHOST:%s\r\n", message,"192.168.20.231");
     send(sockfd,request,sizeof(request),0);
             
     printf("request sent!\n");
@@ -168,8 +150,6 @@ void *sendReq(char* current_time)
     
     syslog(LOG_INFO,"Received following: %s",response);
 
-    free(current_time);
     close(sockfd);
-   
 }
 
