@@ -7,7 +7,7 @@ var DateTime ;
 function functionGet() {
 fromTo = SellectDate(); // get the sellected intervall
     const Http = new XMLHttpRequest();
-    const url = 'http://localhost:8888/'+fromTo;
+    const url = 'http://192.168.20.187:8888/'+fromTo;
     Http.open("GET", url,true);
     Http.send(url);
   Http.responseType ="document";
@@ -24,7 +24,6 @@ fromTo = SellectDate(); // get the sellected intervall
  
     return false;
 }
-
 /**
  * This method converts a js object to a string in json format and returns the string.
  */

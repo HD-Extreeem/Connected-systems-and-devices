@@ -47,6 +47,7 @@ function drawBasic() {
 
     setObject();
     var data = new google.visualization.DataTable();
+    var titelRes ="";
     if (isDay) { // There is more than one day
         data.addColumn('timeofday', 'Time of Day');
         data.addColumn('number', 'Motion');
@@ -76,11 +77,18 @@ function drawBasic() {
             [{ v: [23, 0, 0], f: '23' }, hours[22]],
             [{ v: [24, 0, 0], f: '24' }, hours[23]],
         ]);
-
+        if ((mainObj.DateTime[0].Date) == null) {
+            titelRes = "";
+        }
+        else {
+            titelRes = mainObj.DateTime[0].Date;
+        }
         var options = {
-            title: 'Motion Capturing Monitoring',
+
+
+            title: 'Motion Capturing Monitoring ' + titelRes,
             hAxis: {
-                title: 'Time of Day',
+                title: 'Time of Day ',
                 viewWindow: {
                     min: [0, 30, 0],
                     max: [24, 30, 0]
@@ -102,9 +110,17 @@ function drawBasic() {
             dateArray[i - 1] = [new Date(item[0], item[1], item[2]), days[item[2]]];
         }
         data.addRows(dateArray);
-
+        /*
+        var titelRes;
+        if ((mainObj.DateTime[0]) == undefined) {
+            titelRes = "";
+        }
+        else {
+            titelRes = mainObj.DateTime[0].Date;
+        }
+        */
         var options = {
-            title: 'Action Monitoring',
+            title: 'Motion Capturing Monitoring ' + mainObj.DateTime[0].Date + ' - ' + mainObj.DateTime[ mainObj.DateTime.length-1].Date,
             hAxis: {
                 format: 'M/d/yy',
                 gridlines: { count: 10 }
@@ -114,6 +130,7 @@ function drawBasic() {
                 minValue: 0
             }
         };
+
 
     }
     chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));

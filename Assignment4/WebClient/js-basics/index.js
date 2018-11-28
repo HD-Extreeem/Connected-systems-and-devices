@@ -12,7 +12,7 @@ function SellectDate() {
     to = to.replace(":", "-");
     from = from + "-00";
     to = to + "-00";
-    document.getElementById("demo").innerHTML = from + "&" + to;
+  //  document.getElementById("demo").innerHTML = from + "&" + to;
     return ( from + "&" + to);
 }
 
