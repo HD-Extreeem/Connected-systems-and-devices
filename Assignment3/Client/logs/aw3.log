@@ -1,0 +1,26 @@
+30/11 10:27:21 FINER client.SimClient|creating agent instance of ExampleAgent
+30/11 10:27:21 FINE client.ServerConnection|(1) connecting to server 127.0.01 at port 6502
+30/11 10:27:21 FINE client.ServerConnection|(1) connected to server 127.0.01
+30/11 10:27:21 FINEST client.ServerConnection|(1) sending Message[test,admin,adminContent[auth,[name=test,password=testing,client.version=0.9.6]]]
+30/11 10:27:21 FINEST client.SimClient|(1) received adminContent[auth,[server.version=0.8.19]]
+30/11 10:27:21 FINER client.ServerConnection|(1) successfully logged in as test
+30/11 10:27:21 FINEST client.ServerConnection|(1) sending Message[test,admin,adminContent[server time,[]]]
+30/11 10:27:21 FINEST client.ServerConnection|(1) sending Message[test,admin,adminContent[join simulation,[]]]
+30/11 10:27:21 FINEST client.SimClient|(1) received adminContent[server time,[time=1543570041195]]
+30/11 09:27:21 FINEST client.SimClient|(1) received adminContent[join simulation,[type=tac06scm,simulation=111,startTime=1543570080000,role=PCManufacturer]]
+30/11 09:27:21 INFO client.SimClient|next simulation 111 starts in 38 seconds
+30/11 09:28:00 FINEST client.SimClient|(1) received Message[coordinator,man1,startInfo[111,1543570080000,1000000,5,[customer.daysBeforeVoid=5,factory.address=factory1,factory.capacity=2000,factory.storageCost=26,bank.interestRate=7,bank.depositInterestRate=3,manufacturer.count=6,manufacturer.1=test,manufacturer.2=Dummy,manufacturer.3=Dummy-2,manufacturer.4=Dummy-3,manufacturer.5=Dummy-4,manufacturer.6=Dummy-5]]]
+30/11 09:28:00 FINE client.SimClient|Entering log for simulation 111
+************************************************************
+* Entering log for simulation 111
+************************************************************
+
+
+30/11 09:44:40 FINEST client.ServerConnection|(1) sending Message[test,admin,adminContent[join simulation,[]]]
+30/11 09:44:40 FINEST client.SimClient|(1) received adminContent[join simulation,[type=tac06scm,startTime=1543571160000,role=PCManufacturer]]
+30/11 09:44:40 FINER client.SimClient|creating agent instance of ExampleAgent
+30/11 09:44:40 INFO client.SimClient|next simulation starts in 79 seconds
+30/11 09:44:40 INFO client.SimClient|[will reconnect in 1 minutes, 4 seconds]
+30/11 09:44:40 FINEST client.ServerConnection|(1) sending Message[test,admin,adminContent[quit,[]]]
+30/11 09:44:40 FINEST client.ServerConnection|(1) received Message[admin,test,adminContent[quit,[]]]
+30/11 09:44:40 FINE client.ServerConnection|(1) disconnected from server 127.0.01

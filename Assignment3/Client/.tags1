@@ -1,0 +1,20 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ExampleAgent	/Users/hadideknache/Github/Assignment3/tac/First_version_if/ExampleAgent.java	/^public class ExampleAgent extends SCMAgent {$/;"	class	line:88
+log	/Users/hadideknache/Github/Assignment3/tac/First_version_if/ExampleAgent.java	/^  private static final Logger log =$/;"	field	line:90	class:ExampleAgent	file:
+random	/Users/hadideknache/Github/Assignment3/tac/First_version_if/ExampleAgent.java	/^  private Random random = new Random();$/;"	field	line:93	class:ExampleAgent	file:
+lastBidDueDate	/Users/hadideknache/Github/Assignment3/tac/First_version_if/ExampleAgent.java	/^  private int lastBidDueDate;$/;"	field	line:96	class:ExampleAgent	file:
+priceDiscountFactor	/Users/hadideknache/Github/Assignment3/tac/First_version_if/ExampleAgent.java	/^  private double priceDiscountFactor = 0.2;$/;"	field	line:99	class:ExampleAgent	file:
+componentDemand	/Users/hadideknache/Github/Assignment3/tac/First_version_if/ExampleAgent.java	/^  private InventoryStatus componentDemand = new InventoryStatus();$/;"	field	line:102	class:ExampleAgent	file:
+ExampleAgent	/Users/hadideknache/Github/Assignment3/tac/First_version_if/ExampleAgent.java	/^  public ExampleAgent() {$/;"	method	line:105	class:ExampleAgent	signature:()
+simulationStarted	/Users/hadideknache/Github/Assignment3/tac/First_version_if/ExampleAgent.java	/^  protected void simulationStarted() {$/;"	method	line:112	class:ExampleAgent	signature:()
+simulationEnded	/Users/hadideknache/Github/Assignment3/tac/First_version_if/ExampleAgent.java	/^  protected void simulationEnded() {$/;"	method	line:123	class:ExampleAgent	signature:()
+handleCustomerRFQs	/Users/hadideknache/Github/Assignment3/tac/First_version_if/ExampleAgent.java	/^  protected void handleCustomerRFQs(RFQBundle rfqBundle) {$/;"	method	line:134	class:ExampleAgent	signature:(RFQBundle rfqBundle)
+handleCustomerOrders	/Users/hadideknache/Github/Assignment3/tac/First_version_if/ExampleAgent.java	/^  protected void handleCustomerOrders(Order[] newOrders) {$/;"	method	line:196	class:ExampleAgent	signature:(Order[] newOrders)
+handleSupplierOffers	/Users/hadideknache/Github/Assignment3/tac/First_version_if/ExampleAgent.java	/^  protected void handleSupplierOffers(String supplierAddress,$/;"	method	line:250	class:ExampleAgent	signature:(String supplierAddress, OfferBundle offers)
+handleSimulationStatus	/Users/hadideknache/Github/Assignment3/tac/First_version_if/ExampleAgent.java	/^  protected synchronized void handleSimulationStatus(SimulationStatus status) {$/;"	method	line:284	class:ExampleAgent	signature:(SimulationStatus status)
+cancelCustomerOrder	/Users/hadideknache/Github/Assignment3/tac/First_version_if/ExampleAgent.java	/^  private void cancelCustomerOrder(Order order) {$/;"	method	line:365	class:ExampleAgent	file:	signature:(Order order)
