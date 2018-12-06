@@ -12,7 +12,7 @@ var days = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 function setObject() {
     mainObj = getObject(); // get json object
     mainObj = JSON.parse(mainObj);
-    if (mainObj != null) {
+    if (mainObj != undefined) {
         console.log("NOT NULLL");
         if (mainObj.DateTime.length > 0) { // check if there is motion between given interval
             isDay = checkIfDay(mainObj);
@@ -77,7 +77,7 @@ function drawBasic() {
             [{ v: [23, 0, 0], f: '23' }, hours[22]],
             [{ v: [24, 0, 0], f: '24' }, hours[23]],
         ]);
-        if ((mainObj.DateTime[0].Date) == null) {
+        if (hours[0]==0) {
             titelRes = "";
         }
         else {
@@ -110,15 +110,7 @@ function drawBasic() {
             dateArray[i - 1] = [new Date(item[0], item[1], item[2]), days[item[2]]];
         }
         data.addRows(dateArray);
-        /*
-        var titelRes;
-        if ((mainObj.DateTime[0]) == undefined) {
-            titelRes = "";
-        }
-        else {
-            titelRes = mainObj.DateTime[0].Date;
-        }
-        */
+ 
         var options = {
             title: 'Motion Capturing Monitoring ' + mainObj.DateTime[0].Date + ' - ' + mainObj.DateTime[ mainObj.DateTime.length-1].Date,
             hAxis: {
