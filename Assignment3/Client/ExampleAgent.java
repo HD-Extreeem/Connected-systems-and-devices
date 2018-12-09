@@ -21,6 +21,7 @@
  *
  * Author  : Joakim Eriksson, Niclas Finne, Sverker Janson
  * Created : Tue May 06 17:41:55 2003
+ * Modified: Yurdaer Dalkic and Hadi Deknache 2018
  * Updated : $Date: 2005/06/08 22:34:39 $
  *           $Revision: 1.13 $
  */
@@ -137,15 +138,9 @@ public class ExampleAgent extends SCMAgent {
     int currentDate = getCurrentDate();
     long status = getCurrentBankStatus().getAccountStatus();
     System.out.println("New rfqBundle have received, date = "+currentDate+", BankStatus = "+status);
-    //int t =0;
-    //boolean buy = false;
-    //status<0 && currentDate == 0 ||
-    /*if(status<0 && currentDate%4 == 0 || status >= 0){
-        buy = true;
-    }*/
+
     for (int i = 0, n = rfqBundle.size(); i < n; i++) {
       int dueDate = rfqBundle.getDueDate(i);
-      //System.out.println("Total number of rfqBundle is  :"+rfqBundle.size());
       // Only bid for quotes to which we have time to produce PCs and
       // where the delivery time is not beyond the end of the game.
       // See the comments in the beginning of this file.
@@ -159,12 +154,12 @@ public class ExampleAgent extends SCMAgent {
         int[] components = bomBundle.getComponentsForProductID(productId);
 		int cost = bomBundle.getProductBasePrice(productId-1);
 		int offeredPrice = (int) (resPrice * (1.0 - random.nextDouble() * priceDiscountFactor));
+
 		double profit = (offeredPrice-cost)*quantity;
         double div = (profit/penalty);
 
-
+        //Buy all profitable orders with a 1/5 risk factor
 		if(div>0.20){
-            //t++;
             /*System.out.println("Division = "+(div));
             System.out.println("resPrice :"+ resPrice);
             System.out.println("quantity :"+ quantity);
@@ -181,7 +176,6 @@ public class ExampleAgent extends SCMAgent {
 
     // Finished adding offers. Send all offers to the customers.
     System.out.println("Sending offers to the costumers");
-    //System.out.println("Total costumer offers = "+t);
     sendCustomerOffers();
   }
 
@@ -203,6 +197,7 @@ public class ExampleAgent extends SCMAgent {
       int quantity = order.getQuantity();
       int[] components = bomBundle.getComponentsForProductID(productID);
       if (components != null) {
+         //Buy from both suppliers
 		for (int j = 0, m = components.length; j < m; j++) {
 		  componentDemand.addInventory(components[j], quantity);
 		}
@@ -225,7 +220,6 @@ public class ExampleAgent extends SCMAgent {
         for(int j =0;j<suppliers.length;j++){
 
           addSupplierRFQ(suppliers[j], productID, quantity, 0, currentDate + 2);
-          // RFQs.put( addSupplierRFQ(suppliers[j], productID, quantity, 0, currentDate + 2),productID);
           componentDemand.addInventory(productID, -quantity);
         }
 
@@ -256,18 +250,7 @@ public class ExampleAgent extends SCMAgent {
     for (int i = offers.size() - 1; i >= 0; i--) {
       // Only order if quantity > 0 (otherwise it is only a price quote)
         if (offers.getQuantity(i) > 0) {
-
          addSupplierOrder(supplierAddress, offers, i);
-
-      	/*
-      	int rfq = offers.getRFQID(i);
-      	int proID = RFQs.get(rfq);
-        RFQs.remove(rfq);
-      	if(componentDemand.getInventoryQuantity(proID)>0){
-           addSupplierOrder(supplierAddress, offers, i);
-           componentDemand.addInventory(proID, -offers.getQuantity(i));
-      	}
-		*/
         }
     }
 
@@ -339,18 +322,6 @@ public class ExampleAgent extends SCMAgent {
 		  reserveInventoryForNextDay(productID, inventoryQuantity);
 
 		} else {
-
-    		/*BOMBundle bomBundle = getBOMBundle();
-    		ComponentCatalog catalog = getComponentCatalog();
-    		String[] suppliers = catalog.getSuppliersForProduct(productID);
-            int[] components = bomBundle.getComponentsForProductID(productID);
-            for (int j = 0, m = components.length; j < m; j++) {
-
-            	if(inventory.getInventoryQuantity(components[j])>0){
-            	 	//addSupplierRFQ(suppliers[j], productID, inventory.getInventoryQuantity(components[j]), 0, currentDate + 2);
-            	 	// RFQs.put( addSupplierRFQ(suppliers[j], productID, inventory.getInventoryQuantity(components[j]), 0, currentDate + 2), productID);
-            	}
-    		}*/
     		// Otherwise the production could not be done (lack of
     		// free factory cycles or not enough components in
     		// inventory) and nothing can be done for this order at
